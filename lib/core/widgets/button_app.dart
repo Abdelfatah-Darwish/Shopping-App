@@ -40,7 +40,7 @@ class AppTextButton extends StatelessWidget {
         padding: WidgetStateProperty.all<EdgeInsets>(
           EdgeInsets.symmetric(
             horizontal: horizontalPadding?.w ?? 16.w,
-            vertical: verticalPadding?.h ?? 10.h,
+            vertical: verticalPadding?.h ?? 12.h,
           ),
         ),
         fixedSize: WidgetStateProperty.all(
