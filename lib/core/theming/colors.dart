@@ -11,5 +11,5 @@ class ColorsManager {
   static const Color white = Color.fromRGBO(255, 255, 255, 1);
 
   static const Color blue = Color.fromRGBO(66, 133, 244, 1);
-  //
+  static const Color darkerGrey = Color.fromRGBO(73, 70, 70, 1);
 }
