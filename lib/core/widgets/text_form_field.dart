@@ -12,9 +12,9 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final bool? isObscureText;
   final Widget? suffixIcon;
-  final Color? backgroundColor;
   final TextEditingController? controller;
   final Function(String?) validator;
+
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -25,7 +25,6 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.isObscureText,
     this.suffixIcon,
-    this.backgroundColor,
     this.controller,
     required this.validator,
   });
