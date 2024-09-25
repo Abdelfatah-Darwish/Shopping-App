@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Dive extends StatelessWidget {
-  const Dive({super.key});
+class ShoppingApp extends StatelessWidget {
+  const ShoppingApp({super.key});
 
   @override
   Widget build(BuildContext context) {
