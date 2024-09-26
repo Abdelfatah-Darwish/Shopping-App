@@ -29,21 +29,21 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 30.0),
           ),
         ),
-        backgroundColor: WidgetStatePropertyAll(
+        backgroundColor: MaterialStatePropertyAll(
           backgroundColor ?? ColorsManager.pink,
         ),
-        padding: WidgetStateProperty.all<EdgeInsets>(
+        padding: MaterialStateProperty.all<EdgeInsets>(
           EdgeInsets.symmetric(
             horizontal: horizontalPadding?.w ?? 16.w,
             vertical: verticalPadding?.h ?? 12.h,
           ),
         ),
-        fixedSize: WidgetStateProperty.all(
+        fixedSize: MaterialStateProperty.all(
           Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 58.h),
         ),
       ),

@@ -14,7 +14,6 @@ class AppTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final Function(String?) validator;
-
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -41,7 +40,7 @@ class AppTextFormField extends StatelessWidget {
             OutlineInputBorder(
               borderSide: const BorderSide(
                 color: ColorsManager.pink,
-                width: 2,
+                width: 1.7,
               ),
               borderRadius: BorderRadius.circular(30.0),
             ),
@@ -49,7 +48,7 @@ class AppTextFormField extends StatelessWidget {
             OutlineInputBorder(
               borderSide: const BorderSide(
                 color: ColorsManager.lightGrey,
-                width: 2,
+                width: 1.7,
               ),
               borderRadius: BorderRadius.circular(30.0),
             ),
