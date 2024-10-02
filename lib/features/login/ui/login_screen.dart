@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
+import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
 import 'package:shopping_app/features/login/ui/widgets/remember_me_checkbox.dart';
 
@@ -75,6 +76,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const RememberMeCheckbox(),
+              verticalSpace(16),
+              AppTextButton(
+                  buttonText: 'Sign In',
+                  textStyle: TextStyles.font18WhiteRegular,
+                  onPressed: () {}),
             ],
           ),
         ),
