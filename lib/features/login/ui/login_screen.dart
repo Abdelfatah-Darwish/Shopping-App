@@ -62,6 +62,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          'Forgot password?',
+                          style: TextStyles.font14PinkRegular
+                              .copyWith(color: const Color(0xFFFF1768)),
+                        ),
+                      ),
                     ],
                   )),
             ],
