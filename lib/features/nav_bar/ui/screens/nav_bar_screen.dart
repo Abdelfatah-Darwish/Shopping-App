@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:shopping_app/core/theming/colors.dart';
+import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
 
 class NavBar extends StatelessWidget {
@@ -33,8 +35,8 @@ class NavBar extends StatelessWidget {
                     icon: Icons.home,
                     leading: Image.asset(
                       "assets/images/home_nav.png",
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color:
                           BlocProvider.of<NavBarCubit>(context).selectedIndex ==
                                   0
@@ -47,8 +49,8 @@ class NavBar extends StatelessWidget {
                     icon: Icons.list_alt,
                     leading: Image.asset(
                       "assets/images/category.png",
-                      width: 20,
-                      height: 20,
+                      width: 20.w,
+                      height: 20.h,
                       color:
                           BlocProvider.of<NavBarCubit>(context).selectedIndex ==
                                   1
@@ -61,8 +63,8 @@ class NavBar extends StatelessWidget {
                     icon: Icons.category,
                     leading: Image.asset(
                       "assets/images/cart_nav.png",
-                      width: 24,
-                      height: 24,
+                      width: 20.w,
+                      height: 20.h,
                       color:
                           BlocProvider.of<NavBarCubit>(context).selectedIndex ==
                                   2
@@ -75,8 +77,8 @@ class NavBar extends StatelessWidget {
                     icon: Icons.favorite,
                     leading: Image.asset(
                       "assets/images/fav_nav.png",
-                      width: 24,
-                      height: 24,
+                      width: 20.w,
+                      height: 20.h,
                       color:
                           BlocProvider.of<NavBarCubit>(context).selectedIndex ==
                                   3
