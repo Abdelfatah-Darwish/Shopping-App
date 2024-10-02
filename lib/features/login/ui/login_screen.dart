@@ -45,12 +45,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       AppTextFormField(
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 20.w,
+                          vertical: 18.h,
+                        ),
                         hintText: 'E-mail / phone number',
                         inputTextStyle: TextStyles.font18BlackRegular,
                         validator: (value) {},
                       ),
                       verticalSpace(19),
                       AppTextFormField(
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 20.w,
+                          vertical: 18.h,
+                        ),
                         hintText: 'Password',
                         validator: (value) {},
                         isObscureText: isObscureText,
@@ -79,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const RememberMeCheckbox(),
-                verticalSpace(16),
+                // verticalSpace(16),
                 AppTextButton(
                   buttonText: 'Sign In',
                   textStyle: TextStyles.font18WhiteRegular,
