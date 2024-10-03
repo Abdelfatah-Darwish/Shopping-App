@@ -41,6 +41,7 @@ class BuildProductCategory extends StatelessWidget {
     );
   }
 
+//   not clean function , i will try refactor it -> "noran"
   Widget _buildProductCategory(BuildContext context,
       {required int index, required String name, required int selectedIndex}) {
     final isSelected = index ==
