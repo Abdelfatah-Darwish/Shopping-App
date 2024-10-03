@@ -4,7 +4,7 @@ import 'package:shopping_app/core/theming/text_styles.dart';
 
 class DontHaveAccountText extends StatelessWidget {
   const DontHaveAccountText({super.key});
-
+//
   @override
   Widget build(BuildContext context) {
     return RichText(
