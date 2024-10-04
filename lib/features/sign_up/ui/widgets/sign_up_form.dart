@@ -28,7 +28,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   bool hasLowercase = false;
   bool hasUppercase = false;
-  bool hasSpecialCharacters = false;
+
   bool hasNumber = false;
   bool hasMinLength = false;
 
@@ -45,8 +45,7 @@ class _SignUpFormState extends State<SignUpForm> {
       setState(() {
         hasLowercase = AppRegex.hasLowerCase(passwordController.text);
         hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        hasSpecialCharacters =
-            AppRegex.hasSpecialCharacter(passwordController.text);
+
         hasNumber = AppRegex.hasNumber(passwordController.text);
         hasMinLength = AppRegex.hasMinLength(passwordController.text);
       });
@@ -128,11 +127,10 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
             ),
           ),
-          verticalSpace(24),
+          verticalSpace(2),
           PasswordValidation(
             hasLowerCase: hasLowercase,
             hasUpperCase: hasUppercase,
-            hasSpecialCharacters: hasSpecialCharacters,
             hasNumber: hasNumber,
             hasMinLength: hasMinLength,
           ),
