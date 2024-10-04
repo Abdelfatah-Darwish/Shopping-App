@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/delete_this_after_merge/sign_up_widgets/already_have_account.dart';
 import 'package:shopping_app/delete_this_after_merge/sign_up_widgets/password_validation.dart';
 import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
@@ -45,7 +47,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 AppTextButton(
                   buttonText: 'Sign Up',
                   textStyle: TextStyles.font18WhiteRegular,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushReplacementNamed(Routes.homeScreen);
+                  },
                 ),
                 verticalSpace(18),
                 const AlreadyHaveAccountText(),

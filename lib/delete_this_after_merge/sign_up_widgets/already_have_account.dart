@@ -21,9 +21,10 @@ class AlreadyHaveAccountText extends StatelessWidget {
           TextSpan(
             text: ' Sign In',
             style: TextStyles.font20PinkRegular,
-            recognizer: TapGestureRecognizer()..onTap = () {
-               context.pushReplacementNamed(Routes.loginScreen);
-            },
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                context.pushReplacementNamed(Routes.loginScreen);
+              },
           ),
         ],
       ),

@@ -16,8 +16,9 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  TextEditingController emailController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController =
       TextEditingController();
@@ -55,7 +56,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      // key: formKey,
+      key: formKey,
       child: Column(
         children: [
           AppTextFormField(
