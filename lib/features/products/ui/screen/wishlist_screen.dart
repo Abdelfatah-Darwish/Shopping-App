@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/theming/colors.dart';
+import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/category/ui/widgets/build_product_category.dart';
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
@@ -24,7 +25,10 @@ class WishListScreen extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        title: const Text("Wish List"),
+        title: Text(
+          "WishList",
+          style: TextStyles.font15BlackSemiBold,
+        ),
         centerTitle: true,
       ),
       body: ListView(
