@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(10),
               const CustomSearchBar(),
               verticalSpace(4),
-              AdBanner(),
+              const AdBanner(),
               verticalSpace(15),
               const BuildProductCategory(),
               verticalSpace(5),
