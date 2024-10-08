@@ -17,19 +17,19 @@ class UserInFormationSection extends StatelessWidget {
     return ListTile(
         leading: Image.asset(
           'assets/images/${AssetsPath}',
-          width: 24.w,
-          height: 24.h,
+          width: 18.w,
+          height: 18.h,
         ),
         title: Text(
           title,
-          style: TextStyles.font15BlackSemiBold.copyWith(color: Colors.black),
+          style: TextStyles.font13blackSemiBold.copyWith(color: Colors.black),
         ),
         subtitle: subtitle,
         trailing: IconButton(
             icon: Image.asset(
               'assets/images/arrow-right.png',
-              width: 24.w,
-              height: 24.h,
+              width: 18.w,
+              height: 18.h,
             ),
             onPressed: () {}));
   }

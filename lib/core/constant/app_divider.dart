@@ -10,7 +10,7 @@ class AppDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Divider(
       thickness: 1,
-      color: ColorsManager.lightGrey,
+      color: Color.fromARGB(235, 245, 244, 244),
       height: 20,
     );
   }
