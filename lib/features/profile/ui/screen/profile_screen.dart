@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           backgroundColor: ColorsManager.white,
           title: Text(
             "Profial",
-            style: TextStyles.font20BlackSemiBold,
+            style: TextStyles.font20BlackSemiBold.copyWith(color: Colors.black),
           ),
           leading: IconButton(
               onPressed: () {},
@@ -38,6 +38,7 @@ class ProfileScreen extends StatelessWidget {
                 const EditProfile(),
                 verticalSpace(20),
                 AccountProfile(),
+                verticalSpace(10),
                 PrivacySection()
               ],
             ),

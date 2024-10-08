@@ -40,7 +40,7 @@ class PrivacySection extends StatelessWidget {
               ),
             ],
           ),
-          verticalSpace(5),
+          verticalSpace(10),
           Container(
             width: double.infinity,
             decoration: const BoxDecoration(
@@ -52,7 +52,7 @@ class PrivacySection extends StatelessWidget {
             ),
             child: Column(
               children: [
-                for (int i = 5; i < title.length; i++)
+                for (int i = 0; i < title.length; i++)
                   Column(
                     children: [
                       UserInFormationSection(

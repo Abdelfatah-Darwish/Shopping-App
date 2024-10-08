@@ -22,7 +22,7 @@ class UserInFormationSection extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: TextStyles.font15BlackSemiBold,
+          style: TextStyles.font15BlackSemiBold.copyWith(color: Colors.black),
         ),
         subtitle: subtitle,
         trailing: IconButton(
