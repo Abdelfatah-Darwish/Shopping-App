@@ -38,9 +38,7 @@ class AccountProfile extends StatelessWidget {
           width: double.infinity,
           decoration: const BoxDecoration(
             boxShadow: [
-              BoxShadow(
-                blurRadius: 1.0,
-              ),
+              BoxShadow(),
             ],
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10)),

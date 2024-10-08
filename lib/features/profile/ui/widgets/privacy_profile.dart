@@ -45,9 +45,7 @@ class PrivacySection extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
               boxShadow: [
-                BoxShadow(
-                  blurRadius: 1,
-                ),
+                BoxShadow(),
               ],
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(12)),
