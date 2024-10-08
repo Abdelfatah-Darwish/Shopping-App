@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:shopping_app/features/prodcuts/data/models/products_model.dart';
+
 import 'package:shopping_app/features/products/data/model/products_model.dart';
 
 abstract class ProductState extends Equatable {
