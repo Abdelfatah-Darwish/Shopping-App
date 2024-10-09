@@ -4,6 +4,7 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
+import 'package:shopping_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:shopping_app/features/sign_up/ui/widgets/already_have_account.dart';
 
 class Dive extends StatelessWidget {
@@ -21,6 +22,6 @@ class Dive extends StatelessWidget {
               scaffoldBackgroundColor: ColorsManager.white,
             ),
             debugShowCheckedModeBanner: false,
-            home: const HomeScreen()));
+            home: const ProfileScreen()));
   }
 }
