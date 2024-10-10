@@ -18,8 +18,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  //final formKey = GlobalKey<FormState>();
-
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,13 +41,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   width: 240.w,
                 ),
                 verticalSpace(2),
-                const SignUpForm(),
+                Form(
+                  key: formKey,
+                  child: const SignUpForm(),
+                ),
                 verticalSpace(24),
                 AppTextButton(
                   buttonText: 'Sign Up',
                   textStyle: TextStyles.font18WhiteRegular,
                   onPressed: () {
-                    context.pushReplacementNamed(Routes.homeScreen);
+                    if (formKey.currentState!.validate()) {
+                      // Proceed with form submission if validation passes
+                      print("Form is valid");
+                    }
                   },
                 ),
                 verticalSpace(18),

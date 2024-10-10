@@ -54,88 +54,90 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      child: Column(
-        children: [
-          AppTextFormField(
-            controller: emailController,
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 18.h,
-            ),
-            hintText: 'E-mail',
-            inputTextStyle: TextStyles.font18BlackRegular,
-            validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
-              }
+    return Column(
+      children: [
+        AppTextFormField(
+          controller: emailController,
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 18.h,
+          ),
+          hintText: 'E-mail',
+          inputTextStyle: TextStyles.font18BlackRegular,
+          validator: (value) {
+            if (value == null ||
+                value.isEmpty ||
+                !AppRegex.isEmailValid(value)) {
+              return 'Please enter a valid email';
+            }
+            return null;
+          },
+        ),
+        verticalSpace(16),
+        AppTextFormField(
+          controller: passwordController,
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 18.h,
+          ),
+          hintText: 'Password',
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter a valid password';
+            }
+            return null;
+          },
+          isObscureText: isPasswordObscureText,
+          suffixIcon: GestureDetector(
+            onTap: () {
+              setState(() {
+                isPasswordObscureText = !isPasswordObscureText;
+              });
             },
-          ),
-          verticalSpace(16),
-          AppTextFormField(
-            controller: passwordController,
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 18.h,
+            child: Icon(
+              isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
             ),
-            hintText: 'Password',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a valid password';
-              }
+          ),
+        ),
+        verticalSpace(16),
+        AppTextFormField(
+          controller: passwordConfirmationController,
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 18.h,
+          ),
+          hintText: 'Confirm password',
+          validator: (value) {
+            if (value == null ||
+                value.isEmpty ||
+                value != passwordController.text) {
+              return 'Please enter a valid password';
+            }
+            return null;
+          },
+          isObscureText: isPasswordConfirmationObscureText,
+          suffixIcon: GestureDetector(
+            onTap: () {
+              setState(() {
+                isPasswordConfirmationObscureText =
+                    !isPasswordConfirmationObscureText;
+              });
             },
-            isObscureText: isPasswordObscureText,
-            suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {
-                  isPasswordObscureText = !isPasswordObscureText;
-                });
-              },
-              child: Icon(
-                isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
-              ),
+            child: Icon(
+              isPasswordConfirmationObscureText
+                  ? Icons.visibility_off
+                  : Icons.visibility,
             ),
           ),
-          verticalSpace(16),
-          AppTextFormField(
-            controller: passwordConfirmationController,
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 18.h,
-            ),
-            hintText: 'Confirm password',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a valid password';
-              }
-            },
-            isObscureText: isPasswordConfirmationObscureText,
-            suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {
-                  isPasswordConfirmationObscureText =
-                      !isPasswordConfirmationObscureText;
-                });
-              },
-              child: Icon(
-                isPasswordConfirmationObscureText
-                    ? Icons.visibility_off
-                    : Icons.visibility,
-              ),
-            ),
-          ),
-          verticalSpace(2),
-          PasswordValidation(
-            hasLowerCase: hasLowercase,
-            hasUpperCase: hasUppercase,
-            hasNumber: hasNumber,
-            hasMinLength: hasMinLength,
-          ),
-        ],
-      ),
+        ),
+        verticalSpace(2),
+        PasswordValidation(
+          hasLowerCase: hasLowercase,
+          hasUpperCase: hasUppercase,
+          hasNumber: hasNumber,
+          hasMinLength: hasMinLength,
+        ),
+      ],
     );
   }
 }

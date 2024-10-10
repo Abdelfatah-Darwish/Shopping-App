@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back), // Back arrow icon
           onPressed: () {
             context.pushReplacementNamed(
-                Routes.loginScreen); // Pops the current screen
+                Routes.signUpScreen); // Pops the current screen
           },
         ),
         title: const Text("Home"),
