@@ -1,5 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/app_regex.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/delete_this_after_merge/login_widgets/dont_have_account.dart';
 import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
@@ -15,6 +20,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   final formKey = GlobalKey<FormState>();
   bool isObscureText = true;
 
@@ -45,22 +53,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       AppTextFormField(
+                        controller: _emailController,
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 20.w,
                           vertical: 18.h,
                         ),
                         hintText: 'E-mail / phone number',
                         inputTextStyle: TextStyles.font18BlackRegular,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid email';
+                          }
+                          return null; // If validation passes
+                        },
                       ),
                       verticalSpace(19),
                       AppTextFormField(
+                        controller: _passwordController,
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 20.w,
                           vertical: 18.h,
                         ),
                         hintText: 'Password',
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid password';
+                          }
+                          return null;
+                        },
                         isObscureText: isObscureText,
                         suffixIcon: GestureDetector(
                           onTap: () {
@@ -91,8 +111,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 AppTextButton(
                   buttonText: 'Sign In',
                   textStyle: TextStyles.font18WhiteRegular,
-                  onPressed: () {},
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      // If the form is valid, proceed with login
+                      context.pushReplacementNamed(Routes.homeScreen);
+                    }
+                  },
                 ),
+
                 verticalSpace(18),
                 const DontHaveAccountText(),
               ],
