@@ -9,7 +9,14 @@ import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({super.key});
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+
+  const SignUpForm({
+    super.key,
+    required this.emailController,
+    required this.passwordController,
+  });
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -18,8 +25,8 @@ class SignUpForm extends StatefulWidget {
 class _SignUpFormState extends State<SignUpForm> {
   final formKey = GlobalKey<FormState>();
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  // TextEditingController emailController = TextEditingController();
+  //TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController =
       TextEditingController();
 
@@ -41,13 +48,13 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
   void setupPasswordControllerListener() {
-    passwordController.addListener(() {
+    widget.passwordController.addListener(() {
       setState(() {
-        hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
+        hasLowercase = AppRegex.hasLowerCase(widget.passwordController.text);
+        hasUppercase = AppRegex.hasUpperCase(widget.passwordController.text);
 
-        hasNumber = AppRegex.hasNumber(passwordController.text);
-        hasMinLength = AppRegex.hasMinLength(passwordController.text);
+        hasNumber = AppRegex.hasNumber(widget.passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(widget.passwordController.text);
       });
     });
   }
@@ -57,7 +64,7 @@ class _SignUpFormState extends State<SignUpForm> {
     return Column(
       children: [
         AppTextFormField(
-          controller: emailController,
+          controller: widget.emailController,
           contentPadding: EdgeInsets.symmetric(
             horizontal: 20.w,
             vertical: 18.h,
@@ -75,7 +82,7 @@ class _SignUpFormState extends State<SignUpForm> {
         ),
         verticalSpace(16),
         AppTextFormField(
-          controller: passwordController,
+          controller: widget.passwordController,
           contentPadding: EdgeInsets.symmetric(
             horizontal: 20.w,
             vertical: 18.h,
@@ -110,7 +117,7 @@ class _SignUpFormState extends State<SignUpForm> {
           validator: (value) {
             if (value == null ||
                 value.isEmpty ||
-                value != passwordController.text) {
+                value != widget.passwordController.text) {
               return 'Please enter a valid password';
             }
             return null;

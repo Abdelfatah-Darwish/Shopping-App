@@ -132,6 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           builder: (context) => ErrorDialog(
                             errorMessage:
                                 message ?? 'An unknown error occurred',
+                            titleErrorMessage: 'Login Error',
                           ),
                         );
                       }

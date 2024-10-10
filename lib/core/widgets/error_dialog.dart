@@ -3,13 +3,14 @@ import 'package:shopping_app/delete_this_after_merge/theming/colors.dart';
 
 class ErrorDialog extends StatelessWidget {
   final String errorMessage;
-
-  const ErrorDialog({super.key, required this.errorMessage});
+  final String titleErrorMessage;
+  const ErrorDialog(
+      {super.key, required this.errorMessage, required this.titleErrorMessage});
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Login Error'),
+      title: Text(titleErrorMessage),
       content: Text(errorMessage),
       actions: [
         TextButton(
