@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_app/core/helpers/app_regex.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/widgets/error_dialog.dart';
@@ -11,8 +10,7 @@ import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
-import 'package:shopping_app/features/home/ui/home_screen.dart';
-import 'package:shopping_app/features/login/logic/auth/auth_service.dart';
+import 'package:shopping_app/core/networking/auth/auth_service.dart';
 import 'package:shopping_app/features/login/ui/widgets/remember_me_checkbox.dart';
 
 class LoginScreen extends StatefulWidget {

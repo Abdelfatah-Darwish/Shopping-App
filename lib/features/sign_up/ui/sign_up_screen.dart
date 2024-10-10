@@ -4,12 +4,10 @@ import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/widgets/error_dialog.dart';
 import 'package:shopping_app/delete_this_after_merge/sign_up_widgets/already_have_account.dart';
-import 'package:shopping_app/delete_this_after_merge/sign_up_widgets/password_validation.dart';
 import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
-import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
-import 'package:shopping_app/features/login/logic/auth/auth_service.dart';
+import 'package:shopping_app/core/networking/auth/auth_service.dart';
 import 'package:shopping_app/features/sign_up/ui/widgets/sign_up_form.dart';
 
 class SignUpScreen extends StatefulWidget {
