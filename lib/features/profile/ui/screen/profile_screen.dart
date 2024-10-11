@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
@@ -22,7 +24,9 @@ class ProfileScreen extends StatelessWidget {
             style: TextStyles.font20BlackSemiBold.copyWith(color: Colors.black),
           ),
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushReplacementNamed(Routes.homeScreen);
+              },
               icon: Image.asset(
                 'assets/images/next.png',
                 width: 20.w,

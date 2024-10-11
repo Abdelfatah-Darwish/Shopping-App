@@ -4,12 +4,13 @@ import 'package:shopping_app/features/authentication/ui/authentication_screen.da
 import 'package:shopping_app/features/home/ui/home_screen.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
 import 'package:shopping_app/features/login/ui/login_screen.dart';
+import 'package:shopping_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:shopping_app/features/sign_up/ui/sign_up_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     //this arguments to be passed in any screen like this ( arguments as ClassName )
-   // final arguments = settings.arguments;
+    // final arguments = settings.arguments;
 
     switch (settings.name) {
       case Routes.loginScreen:
@@ -23,6 +24,10 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+        );
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProfileScreen(),
         );
       case Routes.authenticationScreen:
         return MaterialPageRoute(

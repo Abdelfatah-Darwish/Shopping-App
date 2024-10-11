@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 
@@ -14,7 +16,15 @@ class HomeTopBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CircleAvatar(radius: 24.0, backgroundColor: ColorsManager.pink),
+            GestureDetector(
+              onTap: () {
+                context.pushReplacementNamed(Routes.profileScreen);
+              },
+              child: const CircleAvatar(
+                radius: 24.0,
+                backgroundColor: ColorsManager.pink,
+              ),
+            ),
             horizontalSpace(8.0),
             const Text("Welcome, Dalida"),
           ],

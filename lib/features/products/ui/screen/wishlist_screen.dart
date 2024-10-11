@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
@@ -23,7 +25,9 @@ class WishListScreen extends StatelessWidget {
             width: 24.w,
             height: 24.h,
           ),
-          onPressed: () {},
+          onPressed: () {
+            context.pushReplacementNamed(Routes.homeScreen);
+          },
         ),
         title: Text(
           "WishList",
@@ -36,7 +40,7 @@ class WishListScreen extends StatelessWidget {
           verticalSpace(10),
           const BuildProductCategory(),
           verticalSpace(10),
-          ProductScreen(),
+          const ProductScreen(),
         ],
       ),
     );
