@@ -15,8 +15,8 @@ class CustomSearchBar extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               hintText: "Search here",
-              hintStyle: TextStyle(color: ColorsManager.lightGrey),
-              prefixIcon: Icon(Icons.search, color: ColorsManager.pink),
+              hintStyle: const TextStyle(color: ColorsManager.lightGrey),
+              prefixIcon: const Icon(Icons.search, color: ColorsManager.pink),
               filled: true,
               fillColor: Colors.white,
               contentPadding: const EdgeInsets.all(15.0),
@@ -51,7 +51,7 @@ class CustomSearchBar extends StatelessWidget {
             color: ColorsManager.lightPink,
           ),
           child: IconButton(
-            icon: Icon(Icons.tune, color: ColorsManager.pink, size: 32),
+            icon: const Icon(Icons.tune, color: ColorsManager.pink, size: 32),
             onPressed: () {},
           ),
         ),

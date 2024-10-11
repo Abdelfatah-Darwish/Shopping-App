@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:shopping_app/core/theming/colors.dart';
-import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
 
 class NavBar extends StatelessWidget {
@@ -28,7 +27,7 @@ class NavBar extends StatelessWidget {
                 color: ColorsManager.black,
                 activeColor: ColorsManager.pink,
                 tabBackgroundColor: ColorsManager.lightPink,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 gap: 8,
                 tabs: [
                   GButton(

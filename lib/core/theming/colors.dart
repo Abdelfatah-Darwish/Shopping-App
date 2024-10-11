@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
 
-<<<<<<< HEAD
-class ColorScheme {
-  static const Color pink = Color(0x0fff1768);
-  static const Color black = Color(0x0f000000);
-  static const Color green = Color(0x0f2f8655);
-  static const Color red = Color(0x0fdd2222);
-  static const Color grey = Color.fromRGBO(85, 85, 85, 0.97);
-  static const Color darkGrey = Color.fromRGBO(0, 0, 0, 0.5);
-  static const Color lightGrey = Color.fromRGBO(121, 121, 121, 1);
-=======
 class ColorsManager {
   static const Color pink = Color.fromRGBO(255, 23, 104, 1);
   static const Color black = Color.fromRGBO(0, 0, 0, 0.059);
@@ -22,5 +12,9 @@ class ColorsManager {
   static const Color lightPink = Color.fromRGBO(254, 235, 247, 1);
   static const Color blue = Color.fromRGBO(66, 133, 244, 1);
   static const Color darkerGrey = Color.fromRGBO(73, 70, 70, 1);
->>>>>>> Nourane/branch_1
 }
+
+//   static const Color pink = Color(0x0fff1768);
+//   static const Color black = Color(0x0f000000);
+//   static const Color green = Color(0x0f2f8655);
+//   static const Color red = Color(0x0fdd222

@@ -17,8 +17,4 @@ extension Navigation on BuildContext {
   }
 
   void pop() => Navigator.of(this).pop();
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Nourane/branch_1

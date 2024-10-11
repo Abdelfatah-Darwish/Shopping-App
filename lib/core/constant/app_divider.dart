@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/core/theming/colors.dart';
 
 class AppDivider extends StatelessWidget {
   const AppDivider({

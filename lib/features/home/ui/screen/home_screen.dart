@@ -45,13 +45,13 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           //  to try only.
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => WishListScreen()));
+              MaterialPageRoute(builder: (context) => const WishListScreen()));
         },
+        backgroundColor: Colors.pink,
         child: const Icon(
           Icons.add,
           color: ColorsManager.white,
         ),
-        backgroundColor: Colors.pink,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
