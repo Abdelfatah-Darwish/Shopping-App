@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+<<<<<<< HEAD
   flutter:
     sdk: flutter
 
@@ -64,6 +65,26 @@ dependencies:
   firebase_core: ^3.6.0
   # Flutter plugin for Firebase Auth, enabling authentication using passwords, phone numbers and identity providers like Google, Facebook and Twitter.
   firebase_auth: ^5.3.1
+=======
+  build_runner: ^2.4.12
+  cupertino_icons: ^1.0.8
+  dio: ^5.7.0
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.10+1
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+  get_it: ^8.0.0
+  google_nav_bar: ^5.0.6
+  json_annotation: ^4.9.0
+  json_serializable: ^6.8.0
+  pretty_dio_logger: ^1.4.0
+  retrofit: ^4.4.1
+  retrofit_generator: ^9.1.2
+>>>>>>> Nourane/branch_1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -79,12 +100,17 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
+<<<<<<< HEAD
   
   assets:
     - assets/images/
 
   
 
+=======
+  assets:
+    - assets/images/
+>>>>>>> Nourane/branch_1
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

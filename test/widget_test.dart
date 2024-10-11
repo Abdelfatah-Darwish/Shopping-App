@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+<<<<<<< HEAD
 import 'package:shopping_app/core/routing/app_router.dart';
 import 'package:shopping_app/dive.dart';
 
@@ -14,6 +15,16 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(Dive(appRouter: AppRouter()));
+=======
+import 'package:shopping_app/dive.dart';
+
+import 'package:shopping_app/main.dart';
+
+void main() {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const Dive());
+>>>>>>> Nourane/branch_1
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
