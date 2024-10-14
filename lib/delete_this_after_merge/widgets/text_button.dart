@@ -5,6 +5,7 @@ import 'package:shopping_app/delete_this_after_merge/theming/colors.dart';
 class AppTextButton extends StatelessWidget {
   final double? borderRadius;
   final Color? backgroundColor;
+  final Color? borderColor; // Add border color property
   final double? horizontalPadding;
   final double? verticalPadding;
   final double? buttonWidth;
@@ -12,10 +13,12 @@ class AppTextButton extends StatelessWidget {
   final String buttonText;
   final TextStyle textStyle;
   final VoidCallback onPressed;
+
   const AppTextButton({
     super.key,
     this.borderRadius,
     this.backgroundColor,
+    this.borderColor, // Add border color property
     this.horizontalPadding,
     this.verticalPadding,
     this.buttonHeight,
@@ -32,9 +35,13 @@ class AppTextButton extends StatelessWidget {
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 30.0),
+            side: BorderSide(
+              color: borderColor ?? Colors.transparent, // Use the border color
+              width: 2.0, // Set the border width
+            ),
           ),
         ),
-        backgroundColor: WidgetStatePropertyAll(
+        backgroundColor: WidgetStateProperty.all(
           backgroundColor ?? ColorsManager.pink,
         ),
         padding: WidgetStateProperty.all<EdgeInsets>(
