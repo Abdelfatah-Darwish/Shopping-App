@@ -25,10 +25,34 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               const CheckoutAppBar(),
               verticalSpace(14),
               const CustomDeliveryButtons(),
+              verticalSpace(16),
+              const AddressInGoogleMap(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class AddressInGoogleMap extends StatefulWidget {
+  const AddressInGoogleMap({super.key});
+
+  @override
+  State<AddressInGoogleMap> createState() => _AddressInGoogleMapState();
+}
+
+class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          'Address',
+          style: TextStyles.font16BlackSemiBold
+              .copyWith(color: ColorsManager.black),
+        )
+      ],
     );
   }
 }
