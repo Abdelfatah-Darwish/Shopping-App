@@ -8,6 +8,7 @@ import 'package:shopping_app/features/checkout/ui/widgets/address_container.dart
 import 'package:shopping_app/features/checkout/ui/widgets/address_in_google_map.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/checkout_app_bar.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/custom_delivery_buttons.dart';
+import 'package:shopping_app/features/checkout/ui/widgets/order_items_list.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -22,17 +23,32 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 23.w),
-            child: Column(
-              children: [
-                const CheckoutAppBar(),
-                verticalSpace(14),
-                const CustomDeliveryButtons(),
-                verticalSpace(16),
-                const AddressInGoogleMap(),
-              ],
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 23.w),
+                child: Column(
+                  children: [
+                    const CheckoutAppBar(),
+                    verticalSpace(14),
+                    const CustomDeliveryButtons(),
+                    verticalSpace(16),
+                    const AddressInGoogleMap(),
+                  ],
+                ),
+              ),
+              verticalSpace(24),
+              Padding(
+                padding: const EdgeInsets.only(left: 23),
+                child: Text(
+                  'Order items',
+                  style: TextStyles.font16BlackSemiBold,
+                ),
+              ),
+              verticalSpace(8),
+              const OrderItemsList(),
+            ],
           ),
         ),
       ),

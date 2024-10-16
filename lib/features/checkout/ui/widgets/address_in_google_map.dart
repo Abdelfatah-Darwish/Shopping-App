@@ -18,6 +18,7 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Address',
