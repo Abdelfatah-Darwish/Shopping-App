@@ -18,16 +18,19 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: [
-              const CheckoutAppBar(),
-              verticalSpace(14),
-              const CustomDeliveryButtons(),
-              verticalSpace(16),
-              const AddressInGoogleMap(),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 23.w),
+            child: Column(
+              children: [
+                const CheckoutAppBar(),
+                verticalSpace(14),
+                const CustomDeliveryButtons(),
+                verticalSpace(16),
+                const AddressInGoogleMap(),
+              ],
+            ),
           ),
         ),
       ),
@@ -51,8 +54,161 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
           'Address',
           style: TextStyles.font16BlackSemiBold
               .copyWith(color: ColorsManager.black),
+        ),
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.pink, // Pink border color
+              width: 2.0, // Border width
+            ),
+            borderRadius:
+                BorderRadius.circular(10.0), // Optional: Rounded corners
+          ),
+          child: Column(
+            children: [
+              Image.asset(
+                width: double.infinity,
+                'assets/images/googl_map_image.png',
+                fit: BoxFit.fill,
+              ),
+              verticalSpace(10),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.location_on_outlined,
+                    size: 50,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Home',
+                        style: TextStyles.font14PinkRegular.copyWith(
+                          color: const Color.fromRGBO(0, 0, 0, 150),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 209.w,
+                            child: const Text(
+                              '33 Othman Ibn Affan st, Apt8, Adress, Cairo, Egypt',
+                              maxLines: 1,
+                              overflow:
+                                  TextOverflow.ellipsis, // This will add '...'
+                            ),
+                          ),
+                          TextButton(
+                            child: Text(
+                              'Edit',
+                              style: TextStyles.font12PinkRegular,
+                            ),
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        verticalSpace(8),
+
+//Not that this code is copy from above code.
+//need to refactor it in the future.
+
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.pink, // Pink border color
+              width: 2.0, // Border width
+            ),
+            borderRadius:
+                BorderRadius.circular(10.0), // Optional: Rounded corners
+          ),
+          child: Column(
+            children: [
+              Image.asset(
+                width: double.infinity,
+                'assets/images/googl_map_image.png',
+                fit: BoxFit.fill,
+              ),
+              verticalSpace(10),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.location_on_outlined,
+                    size: 50,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Office',
+                        style: TextStyles.font14PinkRegular.copyWith(
+                          color: const Color.fromRGBO(0, 0, 0, 150),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 209.w,
+                            child: const Text(
+                              '77 Mohamed Ali st, Apt 22, Assailed, Cairo, Egypt',
+                              maxLines: 1,
+                              overflow:
+                                  TextOverflow.ellipsis, // This will add '...'
+                            ),
+                          ),
+                          TextButton(
+                            child: Text(
+                              'Edit',
+                              style: TextStyles.font12PinkRegular,
+                            ),
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         )
       ],
     );
   }
 }
+
+//  return Column(
+//       children: [
+//         Text(
+//           'Address',
+//           style: TextStyles.font16BlackSemiBold
+//               .copyWith(color: ColorsManager.black),
+//         ),
+//         Container(
+
+//               Image.asset('assets/images/googl_map_image.png'),
+//               SizedBox(
+//                 width: double.infinity,
+//                 height: 55.h,
+//                 child: Padding(
+//                   padding: const EdgeInsets.only(),
+//                   child: Row(
+//                     children: [
+//                       Image.asset('assets/images/location.png',
+//                           width: 24.w, height: 24.h),
+
+//                     ],
+//                   ),
+//                 ),
+//               )
+//             ],
+//           ),
+//         );

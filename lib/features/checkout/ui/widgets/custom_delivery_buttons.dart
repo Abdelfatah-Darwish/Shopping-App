@@ -18,6 +18,7 @@ class _CustomDeliveryButtonsState extends State<CustomDeliveryButtons> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         // Delivery Button
         AppTextButton(
@@ -35,11 +36,11 @@ class _CustomDeliveryButtonsState extends State<CustomDeliveryButtons> {
               isDeliverySelected = true; // Select Delivery
             });
           },
-          buttonWidth: 155.w,
-          buttonHeight: 48.h,
+          buttonWidth: 155,
+          buttonHeight: 48,
           borderRadius: 22,
         ),
-        horizontalSpace(18),
+
         // Pick-up Button
         AppTextButton(
           backgroundColor:
@@ -56,8 +57,8 @@ class _CustomDeliveryButtonsState extends State<CustomDeliveryButtons> {
               isDeliverySelected = false; // Select Pick-up
             });
           },
-          buttonWidth: 155.w,
-          buttonHeight: 48.h,
+          buttonWidth: 155,
+          buttonHeight: 48,
           borderRadius: 22,
         ),
       ],
