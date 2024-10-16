@@ -48,6 +48,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ),
               verticalSpace(8),
               const OrderItemsList(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 23.w),
+                child: Column(
+                  children: [
+                    Text(
+                      'Pay with',
+                      style: TextStyles.font16BlackSemiBold,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
