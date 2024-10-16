@@ -44,6 +44,31 @@ class TextStyles {
       fontWeight: FontWeightHelper.regular,
       color: ColorsManager.red,
       letterSpacing: 0.25.sp);
+
+  static TextStyle font14grayRegular = TextStyle(
+      fontSize: 14.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManager.lightGrey,
+      letterSpacing: 0.25.sp);
+
+  static TextStyle font15grayRegular = TextStyle(
+      fontSize: 15.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManager.lightGrey,
+      letterSpacing: 0.25.sp);
+
+  static TextStyle font15BlackRegular = TextStyle(
+      fontSize: 15.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManager.black,
+      letterSpacing: 0.25.sp);
+
+  static TextStyle font15pinkRegular = TextStyle(
+      fontSize: 15.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: ColorsManager.pink,
+      letterSpacing: 0.25.sp);
+
   static TextStyle font18WhiteRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.regular,

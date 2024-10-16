@@ -56,12 +56,51 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       'Pay with',
                       style: TextStyles.font16BlackSemiBold,
                     ),
+                    const PayOptions(),
                   ],
                 ),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class PayOptions extends StatefulWidget {
+  const PayOptions({super.key});
+
+  @override
+  State<PayOptions> createState() => _PayOptionsState();
+}
+
+class _PayOptionsState extends State<PayOptions> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: ColorsManager.pink, // Pink when selected, grey otherwise
+          width: 2.0,
+        ),
+        borderRadius: BorderRadius.circular(13.0),
+      ),
+      child: Row(
+        children: [
+          Image.asset(
+            'assets/images/logos_mastercard.png',
+            fit: BoxFit.fill,
+            width: 32.w,
+            height: 20.h,
+          ),
+          Text(
+            'xxxx-2571',
+            style: TextStyles.font14grayRegular,
+          ),
+        ],
       ),
     );
   }
