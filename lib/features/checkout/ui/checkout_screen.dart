@@ -76,184 +76,77 @@ class PayOptions extends StatefulWidget {
 }
 
 class _PayOptionsState extends State<PayOptions> {
-  bool isClicked = false;
+  // This variable will track which container is selected
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 40.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: isClicked
-                  ? const Color.fromRGBO(0, 0, 0, 490)
-                  : Colors.pink, // Pink when selected, grey otherwise
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(13.0),
-          ),
-          child: Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 8.w, right: 16.w),
-                child: Image.asset(
-                  'assets/images/logos_mastercard.png',
-                  fit: BoxFit.fill,
-                  width: 32.w,
-                  height: 20.h,
-                ),
-              ),
-              SizedBox(
-                width: 223.w,
-                child: Text(
-                  'xxxx-2571',
-                  style: TextStyles.font14grayRegular,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 11.w),
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      isClicked = !isClicked;
-                    });
-                  },
-                  child: isClicked
-                      ? Image.asset(
-                          'assets/images/icon_button_not_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        )
-                      : Image.asset(
-                          'assets/images/icon_button_is_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        _buildPaymentOption(
+            0, 'assets/images/logos_mastercard.png', 'xxxx-2571', 20.h, 32.w),
         verticalSpace(8),
-        Container(
-          height: 40.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: isClicked
-                  ? Colors.pink
-                  : const Color.fromRGBO(
-                      0, 0, 0, 490), // Pink when selected, grey otherwise
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(13.0),
-          ),
-          child: Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 8.w, right: 16.w),
-                child: Image.asset(
-                  'assets/images/logos_apple_pay.png',
-                  fit: BoxFit.fill,
-                  width: 32.w,
-                  height: 13.h,
-                ),
-              ),
-              SizedBox(
-                width: 223.w,
-                child: Text(
-                  'Apple pay',
-                  style: TextStyles.font14BlackRegular,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 11.w),
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      isClicked = !isClicked;
-                    });
-                  },
-                  child: isClicked
-                      ? Image.asset(
-                          'assets/images/icon_button_is_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        )
-                      : Image.asset(
-                          'assets/images/icon_button_not_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        _buildPaymentOption(
+            1, 'assets/images/logos_apple_pay.png', 'Apple Pay', 13.h, 32.w),
         verticalSpace(8),
-        Container(
-          height: 40.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: isClicked
-                  ? Colors.pink
-                  : const Color.fromRGBO(
-                      0, 0, 0, 490), // Pink when selected, grey otherwise
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(13.0),
-          ),
-          child: Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 8.w, right: 16.w),
-                child: Image.asset(
-                  'assets/images/logos_cash.png',
-                  fit: BoxFit.fill,
-                  width: 32.w,
-                  height: 32.h,
-                ),
-              ),
-              SizedBox(
-                width: 223.w,
-                child: Text(
-                  'Cash',
-                  style: TextStyles.font14BlackRegular,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 16.w, right: 11.w),
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      isClicked = !isClicked;
-                    });
-                  },
-                  child: isClicked
-                      ? Image.asset(
-                          'assets/images/icon_button_is_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        )
-                      : Image.asset(
-                          'assets/images/icon_button_not_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        _buildPaymentOption(2, 'assets/images/logos_cash.png', 'Cash', 32.h,
+            32.w), // Custom height for 'Cash'
       ],
+    );
+  }
+
+  Widget _buildPaymentOption(int index, String logoPath, String label,
+      double logoHeight, double logoWidth) {
+    bool isSelected = selectedIndex == index;
+
+    return Container(
+      height: 40.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: isSelected ? Colors.pink : const Color.fromRGBO(0, 0, 0, 490),
+          width: 2,
+        ),
+        borderRadius: BorderRadius.circular(13.0),
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 8.w, right: 16.w),
+            child: Image.asset(
+              logoPath,
+              fit: BoxFit.fill,
+              width: logoWidth, // Use the custom width
+              height: logoHeight, // Use the custom height
+            ),
+          ),
+          SizedBox(
+            width: 223.w,
+            child: Text(
+              label,
+              style: TextStyles.font14grayRegular,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 16.w, right: 11.w),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index; // Update the selected container
+                });
+              },
+              child: Image.asset(
+                isSelected
+                    ? 'assets/images/icon_button_is_selected.png'
+                    : 'assets/images/icon_button_not_selected.png',
+                fit: BoxFit.fill,
+                width: 18.w,
+                height: 18.h,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
