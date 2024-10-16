@@ -46,6 +46,9 @@ class AddressInGoogleMap extends StatefulWidget {
 }
 
 class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
+  // Variable to track which container is selected (1 for Home, 2 for Office)
+  int selectedContainer = 1;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -55,160 +58,145 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
           style: TextStyles.font16BlackSemiBold
               .copyWith(color: ColorsManager.black),
         ),
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.pink, // Pink border color
-              width: 2.0, // Border width
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedContainer = 1; // Select Home
+            });
+          },
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: selectedContainer == 1
+                    ? Colors.pink
+                    : Colors.grey, // Change border color based on selection
+                width: 2.0,
+              ),
+              borderRadius: BorderRadius.circular(10.0),
             ),
-            borderRadius:
-                BorderRadius.circular(10.0), // Optional: Rounded corners
-          ),
-          child: Column(
-            children: [
-              Image.asset(
-                width: double.infinity,
-                'assets/images/googl_map_image.png',
-                fit: BoxFit.fill,
-              ),
-              verticalSpace(10),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.location_on_outlined,
-                    size: 50,
+            child: Column(
+              children: [
+                if (selectedContainer == 1)
+                  Image.asset(
+                    'assets/images/googl_map_image.png',
+                    width: double.infinity,
+                    fit: BoxFit.fill,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Home',
-                        style: TextStyles.font14PinkRegular.copyWith(
-                          color: const Color.fromRGBO(0, 0, 0, 150),
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 209.w,
-                            child: const Text(
-                              '33 Othman Ibn Affan st, Apt8, Adress, Cairo, Egypt',
-                              maxLines: 1,
-                              overflow:
-                                  TextOverflow.ellipsis, // This will add '...'
-                            ),
+                verticalSpace(10),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.location_on_outlined,
+                      size: 50,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Home',
+                          style: TextStyles.font14PinkRegular.copyWith(
+                            color: const Color.fromRGBO(0, 0, 0, 150),
                           ),
-                          TextButton(
-                            child: Text(
-                              'Edit',
-                              style: TextStyles.font12PinkRegular,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 209.w,
+                              child: const Text(
+                                '33 Othman Ibn Affan st, Apt8, Adress, Cairo, Egypt',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                            onPressed: () {},
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                            TextButton(
+                              child: Text(
+                                'Edit',
+                                style: TextStyles.font12PinkRegular,
+                              ),
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         verticalSpace(8),
-
-//Not that this code is copy from above code.
-//need to refactor it in the future.
-
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.pink, // Pink border color
-              width: 2.0, // Border width
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedContainer = 2; // Select Office
+            });
+          },
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: selectedContainer == 2
+                    ? Colors.pink
+                    : Colors.grey, // Change border color based on selection
+                width: 2.0,
+              ),
+              borderRadius: BorderRadius.circular(10.0),
             ),
-            borderRadius:
-                BorderRadius.circular(10.0), // Optional: Rounded corners
-          ),
-          child: Column(
-            children: [
-              Image.asset(
-                width: double.infinity,
-                'assets/images/googl_map_image.png',
-                fit: BoxFit.fill,
-              ),
-              verticalSpace(10),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.location_on_outlined,
-                    size: 50,
+            child: Column(
+              children: [
+                if (selectedContainer == 2)
+                  Image.asset(
+                    'assets/images/googl_map_image.png',
+                    width: double.infinity,
+                    fit: BoxFit.fill,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Office',
-                        style: TextStyles.font14PinkRegular.copyWith(
-                          color: const Color.fromRGBO(0, 0, 0, 150),
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 209.w,
-                            child: const Text(
-                              '77 Mohamed Ali st, Apt 22, Assailed, Cairo, Egypt',
-                              maxLines: 1,
-                              overflow:
-                                  TextOverflow.ellipsis, // This will add '...'
-                            ),
+                verticalSpace(10),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.location_on_outlined,
+                      size: 50,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Office',
+                          style: TextStyles.font14PinkRegular.copyWith(
+                            color: const Color.fromRGBO(0, 0, 0, 150),
                           ),
-                          TextButton(
-                            child: Text(
-                              'Edit',
-                              style: TextStyles.font12PinkRegular,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 209.w,
+                              child: const Text(
+                                '77 Mohamed Ali st, Apt 22, Assailed, Cairo, Egypt',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                            onPressed: () {},
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                            TextButton(
+                              child: Text(
+                                'Edit',
+                                style: TextStyles.font12PinkRegular,
+                              ),
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        )
+        ),
       ],
     );
   }
 }
 
-//  return Column(
-//       children: [
-//         Text(
-//           'Address',
-//           style: TextStyles.font16BlackSemiBold
-//               .copyWith(color: ColorsManager.black),
-//         ),
-//         Container(
-
-//               Image.asset('assets/images/googl_map_image.png'),
-//               SizedBox(
-//                 width: double.infinity,
-//                 height: 55.h,
-//                 child: Padding(
-//                   padding: const EdgeInsets.only(),
-//                   child: Row(
-//                     children: [
-//                       Image.asset('assets/images/location.png',
-//                           width: 24.w, height: 24.h),
-
-//                     ],
-//                   ),
-//                 ),
-//               )
-//             ],
-//           ),
-//         );
