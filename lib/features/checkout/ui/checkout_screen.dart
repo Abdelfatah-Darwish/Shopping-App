@@ -76,32 +76,126 @@ class PayOptions extends StatefulWidget {
 }
 
 class _PayOptionsState extends State<PayOptions> {
+  bool isClicked = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: ColorsManager.pink, // Pink when selected, grey otherwise
-          width: 2.0,
+    return Column(
+      children: [
+        Container(
+          height: 40.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: isClicked
+                  ? const Color.fromRGBO(0, 0, 0, 490)
+                  : Colors.pink, // Pink when selected, grey otherwise
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(13.0),
+          ),
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 8.w, right: 16.w),
+                child: Image.asset(
+                  'assets/images/logos_mastercard.png',
+                  fit: BoxFit.fill,
+                  width: 32.w,
+                  height: 20.h,
+                ),
+              ),
+              SizedBox(
+                width: 223.w,
+                child: Text(
+                  'xxxx-2571',
+                  style: TextStyles.font14grayRegular,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16.w, right: 11.w),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClicked = !isClicked;
+                    });
+                  },
+                  child: isClicked
+                      ? Image.asset(
+                          'assets/images/icon_button_not_selected.png',
+                          fit: BoxFit.fill,
+                          width: 18.w,
+                          height: 18.h,
+                        )
+                      : Image.asset(
+                          'assets/images/icon_button_is_selected.png',
+                          fit: BoxFit.fill,
+                          width: 18.w,
+                          height: 18.h,
+                        ),
+                ),
+              ),
+            ],
+          ),
         ),
-        borderRadius: BorderRadius.circular(13.0),
-      ),
-      child: Row(
-        children: [
-          Image.asset(
-            'assets/images/logos_mastercard.png',
-            fit: BoxFit.fill,
-            width: 32.w,
-            height: 20.h,
+        verticalSpace(8),
+         Container(
+          height: 40.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: isClicked
+                  ? const Color.fromRGBO(0, 0, 0, 490)
+                  : Colors.pink, // Pink when selected, grey otherwise
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(13.0),
           ),
-          Text(
-            'xxxx-2571',
-            style: TextStyles.font14grayRegular,
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 8.w, right: 16.w),
+                child: Image.asset(
+                  'assets/images/logos_mastercard.png',
+                  fit: BoxFit.fill,
+                  width: 32.w,
+                  height: 20.h,
+                ),
+              ),
+              SizedBox(
+                width: 223.w,
+                child: Text(
+                  'xxxx-2571',
+                  style: TextStyles.font14grayRegular,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16.w, right: 11.w),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClicked = !isClicked;
+                    });
+                  },
+                  child: isClicked
+                      ? Image.asset(
+                          'assets/images/icon_button_not_selected.png',
+                          fit: BoxFit.fill,
+                          width: 18.w,
+                          height: 18.h,
+                        )
+                      : Image.asset(
+                          'assets/images/icon_button_is_selected.png',
+                          fit: BoxFit.fill,
+                          width: 18.w,
+                          height: 18.h,
+                        ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        
+      ],
     );
   }
 }
