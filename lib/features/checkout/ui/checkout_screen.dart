@@ -138,14 +138,15 @@ class _PayOptionsState extends State<PayOptions> {
           ),
         ),
         verticalSpace(8),
-         Container(
+        Container(
           height: 40.h,
           width: double.infinity,
           decoration: BoxDecoration(
             border: Border.all(
               color: isClicked
-                  ? const Color.fromRGBO(0, 0, 0, 490)
-                  : Colors.pink, // Pink when selected, grey otherwise
+                  ? Colors.pink
+                  : const Color.fromRGBO(
+                      0, 0, 0, 490), // Pink when selected, grey otherwise
               width: 2,
             ),
             borderRadius: BorderRadius.circular(13.0),
@@ -155,17 +156,17 @@ class _PayOptionsState extends State<PayOptions> {
               Padding(
                 padding: EdgeInsets.only(left: 8.w, right: 16.w),
                 child: Image.asset(
-                  'assets/images/logos_mastercard.png',
+                  'assets/images/logos_apple_pay.png',
                   fit: BoxFit.fill,
                   width: 32.w,
-                  height: 20.h,
+                  height: 13.h,
                 ),
               ),
               SizedBox(
                 width: 223.w,
                 child: Text(
-                  'xxxx-2571',
-                  style: TextStyles.font14grayRegular,
+                  'Apple pay',
+                  style: TextStyles.font14BlackRegular,
                 ),
               ),
               Padding(
@@ -178,13 +179,13 @@ class _PayOptionsState extends State<PayOptions> {
                   },
                   child: isClicked
                       ? Image.asset(
-                          'assets/images/icon_button_not_selected.png',
+                          'assets/images/icon_button_is_selected.png',
                           fit: BoxFit.fill,
                           width: 18.w,
                           height: 18.h,
                         )
                       : Image.asset(
-                          'assets/images/icon_button_is_selected.png',
+                          'assets/images/icon_button_not_selected.png',
                           fit: BoxFit.fill,
                           width: 18.w,
                           height: 18.h,
@@ -194,7 +195,64 @@ class _PayOptionsState extends State<PayOptions> {
             ],
           ),
         ),
-        
+        verticalSpace(8),
+        Container(
+          height: 40.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: isClicked
+                  ? Colors.pink
+                  : const Color.fromRGBO(
+                      0, 0, 0, 490), // Pink when selected, grey otherwise
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(13.0),
+          ),
+          child: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 8.w, right: 16.w),
+                child: Image.asset(
+                  'assets/images/logos_cash.png',
+                  fit: BoxFit.fill,
+                  width: 32.w,
+                  height: 32.h,
+                ),
+              ),
+              SizedBox(
+                width: 223.w,
+                child: Text(
+                  'Cash',
+                  style: TextStyles.font14BlackRegular,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16.w, right: 11.w),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClicked = !isClicked;
+                    });
+                  },
+                  child: isClicked
+                      ? Image.asset(
+                          'assets/images/icon_button_is_selected.png',
+                          fit: BoxFit.fill,
+                          width: 18.w,
+                          height: 18.h,
+                        )
+                      : Image.asset(
+                          'assets/images/icon_button_not_selected.png',
+                          fit: BoxFit.fill,
+                          width: 18.w,
+                          height: 18.h,
+                        ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
