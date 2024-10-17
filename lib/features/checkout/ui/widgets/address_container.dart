@@ -70,7 +70,11 @@ class AddressContainer extends StatelessWidget {
                         TextButton(
                           child: Text(
                             'Edit',
-                            style: TextStyles.font12PinkRegular,
+                            style: TextStyles.font12PinkRegular.copyWith(
+                              decoration: TextDecoration.underline,
+                              decorationColor: TextStyles.font12PinkRegular
+                                  .color, // Use the same color as the text
+                            ),
                           ),
                           onPressed: () {},
                         )
