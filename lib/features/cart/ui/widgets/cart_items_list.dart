@@ -37,7 +37,7 @@ class _CartItemsListState extends State<CartItemsList> {
     {
       "image": "assets/images/Order_Items.png",
       "price": "800 L.E",
-      "title": "Elegant wrapped dress"
+      "title": "Mint green Jacket"
     },
     {
       "image": "assets/images/Order_Items.png",
@@ -47,7 +47,22 @@ class _CartItemsListState extends State<CartItemsList> {
     {
       "image": "assets/images/Order_Items.png",
       "price": "800 L.E",
-      "title": "Elegant wrapped dress"
+      "title": "Mint green Jacket"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Mint green Jacket"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Mint green Jacket"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Mint green Jacket"
     },
   ];
 
@@ -64,7 +79,7 @@ class _CartItemsListState extends State<CartItemsList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
+      // physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       itemCount: items.length,

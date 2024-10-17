@@ -14,42 +14,40 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 24, right: 24, top: 18, bottom: 44),
-          child: Column(
-            children: [
-              const CartAppBar(),
-              verticalSpace(20),
-              const CartItemsList(),
-              verticalSpace(12),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'TOTAL',
-                    style: TextStyles.font15BlackSemiBold,
-                  ),
-                  Text(
-                    '1,050 L.E',
-                    style: TextStyles.font16BlackRegular,
-                  ),
-                ],
-              ),
-              verticalSpace(24),
-              AppTextButton(
-                verticalPadding: 2,
-                borderRadius: 22,
-                buttonHeight: 48,
-                buttonText: 'Checkout',
-                textStyle: TextStyles.font20WhiteSemiBold,
-                onPressed: () {
-                  context.pushReplacementNamed(Routes.checkoutScreen);
-                },
-              ),
-            ],
-          ),
+          child: Padding(
+        padding:
+            const EdgeInsets.only(left: 24, right: 24, top: 18, bottom: 19),
+        child: Column(
+          children: [
+            const CartAppBar(),
+            verticalSpace(16),
+            const Expanded(child: CartItemsList()),
+            verticalSpace(12),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'TOTAL',
+                  style: TextStyles.font15BlackSemiBold,
+                ),
+                Text(
+                  '1,050 L.E',
+                  style: TextStyles.font16BlackRegular,
+                ),
+              ],
+            ),
+            verticalSpace(20),
+            AppTextButton(
+              verticalPadding: 2,
+              borderRadius: 22,
+              buttonHeight: 48,
+              buttonText: 'Checkout',
+              textStyle: TextStyles.font20WhiteSemiBold,
+              onPressed: () {
+                context.pushReplacementNamed(Routes.checkoutScreen);
+              },
+            ),
+          ],
         ),
       )),
     );
