@@ -10,6 +10,7 @@ import 'package:shopping_app/features/checkout/ui/widgets/address_in_google_map.
 import 'package:shopping_app/features/checkout/ui/widgets/checkout_app_bar.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/custom_delivery_buttons.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/order_items_list.dart';
+import 'package:shopping_app/features/checkout/ui/widgets/payment_information.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/payment_options.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -63,6 +64,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     verticalSpace(8),
                     const AddNewPayment(),
                     verticalSpace(24),
+                    Text(
+                      'Payment',
+                      style: TextStyles.font16BlackSemiBold,
+                    ),
+                    verticalSpace(16),
+                    const PaymentInformation(),
+                    verticalSpace(100),
                   ],
                 ),
               ),
