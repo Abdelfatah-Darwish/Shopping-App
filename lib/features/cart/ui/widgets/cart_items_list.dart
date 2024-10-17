@@ -64,6 +64,7 @@ class _CartItemsListState extends State<CartItemsList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       itemCount: items.length,
@@ -165,4 +166,3 @@ class _CartItemsListState extends State<CartItemsList> {
     );
   }
 }
-
