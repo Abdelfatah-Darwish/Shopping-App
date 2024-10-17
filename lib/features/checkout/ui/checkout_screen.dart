@@ -70,7 +70,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     ),
                     verticalSpace(16),
                     const PaymentInformation(),
-                    verticalSpace(100),
+                    verticalSpace(25),
+                    AppTextButton(
+                      buttonText: 'place order',
+                      textStyle: TextStyles.font20WhiteSemiBold,
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
