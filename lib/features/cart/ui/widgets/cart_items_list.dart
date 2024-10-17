@@ -65,7 +65,7 @@ class _CartItemsListState extends State<CartItemsList> {
             width: double.infinity,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.pink,
+                color: const Color.fromRGBO(0, 0, 0, 490),
                 // Pink when selected, grey otherwise
                 width: 2.0,
               ),
@@ -91,7 +91,6 @@ class _CartItemsListState extends State<CartItemsList> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
                             width: 180.w,
@@ -107,7 +106,7 @@ class _CartItemsListState extends State<CartItemsList> {
                             child: InkWell(
                               onTap: () {},
                               child: Image.asset(
-                                'assets/images/icon_button_is_selected.png',
+                                'assets/images/icon_button_not_selected.png',
                                 fit: BoxFit.fill,
                                 width: 18.w,
                                 height: 18.h,
