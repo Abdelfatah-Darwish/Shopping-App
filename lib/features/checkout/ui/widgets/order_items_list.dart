@@ -41,7 +41,7 @@ class OrderItemsList extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  verticalSpace(8), // Add some space between image and text
+                  verticalSpace(2), // Add some space between image and text
                   // Display the price text
                   Text(
                     items[index]["price"]!,

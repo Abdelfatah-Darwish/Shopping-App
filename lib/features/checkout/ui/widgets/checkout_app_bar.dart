@@ -13,14 +13,14 @@ class CheckoutAppBar extends StatelessWidget {
         IconButton(
           icon: Image.asset(
             "assets/images/next.png",
-            width: 24.w,
-            height: 24.h,
+            width: 10.w,
+            height: 20.h,
           ),
           onPressed: () {
             // context.pushReplacementNamed(Routes.homeScreen);
           },
         ),
-        horizontalSpace(118),
+        horizontalSpace(80),
         Text(
           "Checkout",
           style: TextStyles.font20BlackSemiBold

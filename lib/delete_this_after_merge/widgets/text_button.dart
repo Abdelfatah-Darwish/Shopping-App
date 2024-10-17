@@ -51,7 +51,7 @@ class AppTextButton extends StatelessWidget {
           ),
         ),
         fixedSize: WidgetStateProperty.all(
-          Size(buttonWidth?.w ?? double.maxFinite, buttonHeight ?? 58.h),
+          Size(buttonWidth?.w ?? double.maxFinite, buttonHeight?.h ?? 58.h),
         ),
       ),
       onPressed: onPressed,

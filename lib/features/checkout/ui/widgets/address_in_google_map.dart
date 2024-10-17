@@ -25,7 +25,7 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
           style: TextStyles.font16BlackSemiBold
               .copyWith(color: ColorsManager.black),
         ),
-        verticalSpace(10),
+        verticalSpace(6),
         AddressContainer(
           isSelected: selectedContainer == 1,
           title: 'Home',
