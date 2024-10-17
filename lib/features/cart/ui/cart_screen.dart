@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/features/checkout/ui/widgets/checkout_app_bar.dart';
+import 'package:shopping_app/features/cart/ui/widgets/cart_app_bar.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -10,7 +10,7 @@ class CartScreen extends StatelessWidget {
       body: SafeArea(
           child: Column(
         children: [
-          CheckoutAppBar(),
+          CartAppBar(),
         ],
       )),
     );
