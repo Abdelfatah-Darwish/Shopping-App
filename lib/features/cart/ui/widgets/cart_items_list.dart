@@ -13,87 +13,97 @@ class CartItemsList extends StatefulWidget {
 class _CartItemsListState extends State<CartItemsList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 8),
-      height: 108.h,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.pink,
-          // Pink when selected, grey otherwise
-          width: 2.0,
-        ),
-        borderRadius: BorderRadius.circular(13.0),
-      ),
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(11),
-            child: Image.asset(
-              'assets/images/Order_Items.png',
-              width: 77.w,
-              height: 87.h,
-              fit: BoxFit.cover,
+    return ListView.builder(
+      shrinkWrap: true,
+      scrollDirection: Axis.vertical,
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Container(
+            padding: const EdgeInsets.only(left: 8),
+            height: 108.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.pink,
+                // Pink when selected, grey otherwise
+                width: 2.0,
+              ),
+              borderRadius: BorderRadius.circular(13.0),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 8.0,
-              top: 8,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Elegant wrapped dress',
-                      style: TextStyles.font16BlackRegular,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 16.w, right: 11.w),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Image.asset(
-                          'assets/images/icon_button_is_selected.png',
-                          fit: BoxFit.fill,
-                          width: 18.w,
-                          height: 18.h,
-                        ),
-                      ),
-                    ),
-                  ],
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(11),
+                  child: Image.asset(
+                    'assets/images/Order_Items.png',
+                    width: 77.w,
+                    height: 87.h,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                //  verticalSpace(4),
-                Text(
-                  '580 L.E',
-                  style: TextStyles.font16BlackSemiBold,
-                ),
-                // verticalSpace(6),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const CounterWidget(),
-                    horizontalSpace(80),
-                    TextButton(
-                      child: Text(
-                        'Edit',
-                        style: TextStyles.font12PinkRegular.copyWith(
-                          decoration: TextDecoration.underline,
-                          decorationColor: TextStyles.font12PinkRegular
-                              .color, // Use the same color as the text
-                        ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 8.0,
+                    top: 8,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Elegant wrapped dress',
+                            style: TextStyles.font16BlackRegular,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 16.w, right: 11.w),
+                            child: InkWell(
+                              onTap: () {},
+                              child: Image.asset(
+                                'assets/images/icon_button_is_selected.png',
+                                fit: BoxFit.fill,
+                                width: 18.w,
+                                height: 18.h,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      onPressed: () {},
-                    )
-                  ],
+                      //  verticalSpace(4),
+                      Text(
+                        '580 L.E',
+                        style: TextStyles.font16BlackSemiBold,
+                      ),
+                      // verticalSpace(6),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const CounterWidget(),
+                          horizontalSpace(80),
+                          TextButton(
+                            child: Text(
+                              'Edit',
+                              style: TextStyles.font12PinkRegular.copyWith(
+                                decoration: TextDecoration.underline,
+                                decorationColor: TextStyles.font12PinkRegular
+                                    .color, // Use the same color as the text
+                              ),
+                            ),
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
