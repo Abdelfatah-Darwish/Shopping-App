@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/widgets/nav_bar_for_product.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
+import 'package:shopping_app/features/product_details/widgets/color_selected.dart';
 import 'package:shopping_app/features/product_details/widgets/display_image_of_product.dart';
 import 'package:shopping_app/features/product_details/widgets/display_info_of_product.dart';
 import 'package:shopping_app/features/products/data/model/products_model.dart';
@@ -21,6 +22,8 @@ class ProductDetailsScreen extends StatelessWidget {
               DisplayImageOfProduct(product: product),
               verticalSpace(20),
               DisplayInfoOfProduct(product: product),
+              verticalSpace(10),
+              ColorOfProduct()
             ]),
           ),
         ));
