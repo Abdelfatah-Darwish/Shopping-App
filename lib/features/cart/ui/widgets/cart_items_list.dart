@@ -11,12 +11,51 @@ class CartItemsList extends StatefulWidget {
 }
 
 class _CartItemsListState extends State<CartItemsList> {
+  // List of image URLs and prices
+  final List<Map<String, String>> items = [
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "580 L.E",
+      "title": "Elegant wrapped dress"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "600 L.E",
+      "title": "Mint green Jacket"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "750 L.E",
+      "title": "Elegant wrapped dress"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Mint green Jacket"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Elegant wrapped dress"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Mint green Jacket"
+    },
+    {
+      "image": "assets/images/Order_Items.png",
+      "price": "800 L.E",
+      "title": "Elegant wrapped dress"
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
-      itemCount: 10,
+      itemCount: items.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -37,7 +76,7 @@ class _CartItemsListState extends State<CartItemsList> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(11),
                   child: Image.asset(
-                    'assets/images/Order_Items.png',
+                    items[index]["image"]!,
                     width: 77.w,
                     height: 87.h,
                     fit: BoxFit.cover,
@@ -52,11 +91,16 @@ class _CartItemsListState extends State<CartItemsList> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Elegant wrapped dress',
-                            style: TextStyles.font16BlackRegular,
+                          SizedBox(
+                            width: 180.w,
+                            child: Text(
+                              items[index]["title"]!,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyles.font16BlackRegular,
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 16.w, right: 11.w),
@@ -74,15 +118,14 @@ class _CartItemsListState extends State<CartItemsList> {
                       ),
                       //  verticalSpace(4),
                       Text(
-                        '580 L.E',
+                        items[index]["price"]!,
                         style: TextStyles.font16BlackSemiBold,
                       ),
                       // verticalSpace(6),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const CounterWidget(),
-                          horizontalSpace(80),
+                          horizontalSpace(70),
                           TextButton(
                             child: Text(
                               'Edit',
