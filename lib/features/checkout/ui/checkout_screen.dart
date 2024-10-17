@@ -4,6 +4,7 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
+import 'package:shopping_app/features/checkout/ui/widgets/add_new_payment.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/address_container.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/address_in_google_map.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/checkout_app_bar.dart';
@@ -59,6 +60,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       style: TextStyles.font16BlackSemiBold,
                     ),
                     const PaymentOptions(),
+                    verticalSpace(8),
+                    const AddNewPayment(),
+                    verticalSpace(24),
                   ],
                 ),
               ),
