@@ -22,6 +22,6 @@ class Dive extends StatelessWidget {
               scaffoldBackgroundColor: ColorsManager.white,
             ),
             debugShowCheckedModeBanner: false,
-            home: const ProfileScreen()));
+            home: HomeScreen()));
   }
 }

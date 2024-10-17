@@ -1,6 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/products/data/model/products_model.dart';
@@ -33,7 +31,7 @@ class DisplayInfoOfProduct extends StatelessWidget {
                 const Icon(Icons.star, color: Colors.amber, size: 15),
                 Text(
                   product.rating.rate.toString(),
-                  style: const TextStyle(fontSize: 12),
+                  style: const TextStyle(fontSize: 15),
                 ),
               ],
             ),

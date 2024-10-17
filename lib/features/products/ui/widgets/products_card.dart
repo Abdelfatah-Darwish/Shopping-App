@@ -38,7 +38,6 @@ class ProductCard extends StatelessWidget {
                         product.title,
                         style: TextStyles.font12lightGreyRegular,
                       ),
-                      //  maybe romev it and but after price
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
