@@ -6,4 +6,5 @@ class Routes {
   static const String detailsProductScreen = '/datailsProductScreen';
   static const String profileScreen = '/profileScreen';
   static const String wishListScreen = '/wishListScreen';
+  static const String checkoutScreen = '/checkoutScreen';
 }

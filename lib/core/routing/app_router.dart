@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/features/authentication/ui/authentication_screen.dart';
-import 'package:shopping_app/features/home/ui/home_screen.dart';
+import 'package:shopping_app/features/checkout/ui/checkout_screen.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
 import 'package:shopping_app/features/login/ui/login_screen.dart';
 import 'package:shopping_app/features/profile/ui/screen/profile_screen.dart';
@@ -28,6 +28,10 @@ class AppRouter {
       case Routes.profileScreen:
         return MaterialPageRoute(
           builder: (_) => const ProfileScreen(),
+        );
+      case Routes.checkoutScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CheckoutScreen(),
         );
       case Routes.authenticationScreen:
         return MaterialPageRoute(
