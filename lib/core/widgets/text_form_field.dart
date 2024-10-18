@@ -10,10 +10,11 @@ class AppTextFormField extends StatelessWidget {
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
   final String hintText;
+  final int? maxline;
   final bool? isObscureText;
   final Widget? suffixIcon;
   final TextEditingController? controller;
-  final Function(String?) validator;
+  final Function(String?)? validator;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -25,7 +26,8 @@ class AppTextFormField extends StatelessWidget {
     this.isObscureText,
     this.suffixIcon,
     this.controller,
-    required this.validator,
+    this.validator,
+    this.maxline,
   });
 
   @override
@@ -35,7 +37,7 @@ class AppTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         contentPadding: contentPadding ??
-            EdgeInsets.symmetric(horizontal: 29.w, vertical: 20.h),
+            EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
@@ -55,14 +57,14 @@ class AppTextFormField extends StatelessWidget {
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: ColorsManager.pink,
-            width: 2.0,
+            width: 1.3,
           ),
           borderRadius: BorderRadius.circular(30.0),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: ColorsManager.red,
-            width: 2.0,
+            width: 1.3,
           ),
           borderRadius: BorderRadius.circular(30.0),
         ),
@@ -73,8 +75,9 @@ class AppTextFormField extends StatelessWidget {
       obscureText: isObscureText ?? false,
       style: TextStyles.font18BlackRegular,
       validator: (value) {
-        return validator(value);
+        return validator!(value);
       },
+      maxLines: maxline,
     );
   }
 }
