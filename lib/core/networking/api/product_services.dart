@@ -11,4 +11,7 @@ abstract class ProductServices {
 
   @GET("/products")
   Future<List<Product>> getProducts();
+
+  @POST("/products")
+  Future<Product> createProduct(@Body() Product product);
 }
