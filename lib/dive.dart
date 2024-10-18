@@ -19,7 +19,7 @@ class Dive extends StatelessWidget {
             scaffoldBackgroundColor: const Color(0xFFFCFCFC),
           ),
           debugShowCheckedModeBanner: false,
-          initialRoute: Routes.cartScreen,
+          initialRoute: Routes.loginScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
