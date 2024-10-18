@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/routing/routes.dart';
+import 'package:shopping_app/features/add_new_products/ui/screen/add%20_product%20_variant.dart';
+import 'package:shopping_app/features/add_new_products/ui/screen/add_product_screen.dart';
 import 'package:shopping_app/features/authentication/ui/authentication_screen.dart';
 import 'package:shopping_app/features/home/ui/home_screen.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
@@ -32,6 +34,14 @@ class AppRouter {
       case Routes.authenticationScreen:
         return MaterialPageRoute(
           builder: (_) => const AuthenticationScreen(),
+        );
+      case Routes.addProduct:
+        return MaterialPageRoute(
+          builder: (_) => const AddProductScreen(),
+        );
+      case Routes.AddProductVariantScreen:
+        return MaterialPageRoute(
+          builder: (_) => const AddProductVariant(),
         );
       default:
         return null;

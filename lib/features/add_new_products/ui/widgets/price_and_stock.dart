@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
@@ -71,26 +73,12 @@ class PricingAndStock extends StatelessWidget {
             ),
           ),
         ),
-        verticalSpace(5),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'No variants yet',
-              style: TextStyles.font15BlackSemiBold,
-            ),
-            TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Add one',
-                  style: TextStyles.font12PinkBold,
-                )),
-          ],
-        ),
         AppTextButton(
             buttonText: "Add product",
             textStyle: TextStyles.font18WhiteRegular,
-            onPressed: () {})
+            onPressed: () {
+              context.pushNamed(Routes.addProduct);
+            })
       ],
     );
   }

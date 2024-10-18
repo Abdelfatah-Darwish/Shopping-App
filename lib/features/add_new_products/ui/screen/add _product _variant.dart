@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_app/core/helpers/extensions.dart';
-import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
@@ -11,8 +9,8 @@ import 'package:shopping_app/features/add_new_products/ui/widgets/product_name_d
 import 'package:shopping_app/features/add_new_products/ui/widgets/product_size.dart';
 import 'package:shopping_app/features/add_new_products/ui/widgets/upload_image.dart';
 
-class AddProductScreen extends StatelessWidget {
-  const AddProductScreen({super.key});
+class AddProductVariant extends StatelessWidget {
+  const AddProductVariant({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,33 +37,22 @@ class AddProductScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Product Image",
+                      style: TextStyles.font20BlackSemiBold,
+                    )
+                  ],
+                ),
                 UploadImage(),
                 verticalSpace(40),
-                const ProductNameAndDescription(),
-                verticalSpace(15),
                 ProductSize(),
                 verticalSpace(15),
                 const PickCategorise(),
                 verticalSpace(15),
                 const PricingAndStock(),
-                verticalSpace(5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'No variants yet',
-                      style: TextStyles.font15BlackSemiBold,
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          context.pushNamed(Routes.AddProductVariantScreen);
-                        },
-                        child: Text(
-                          'Add one',
-                          style: TextStyles.font12PinkBold,
-                        )),
-                  ],
-                ),
               ],
             ),
           ),
