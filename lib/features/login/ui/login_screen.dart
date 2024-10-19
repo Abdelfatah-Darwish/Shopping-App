@@ -1,10 +1,16 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
+import 'package:shopping_app/core/widgets/error_dialog.dart';
 import 'package:shopping_app/delete_this_after_merge/login_widgets/dont_have_account.dart';
 import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
+import 'package:shopping_app/core/networking/auth/auth_service.dart';
 import 'package:shopping_app/features/login/ui/widgets/remember_me_checkbox.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -15,6 +21,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   final formKey = GlobalKey<FormState>();
   bool isObscureText = true;
 
@@ -22,9 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 21.h),
-        child: SingleChildScrollView(
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 21.h),
           child: Center(
             child: Column(
               children: [
@@ -45,22 +54,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       AppTextFormField(
+                        controller: _emailController,
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 20.w,
                           vertical: 18.h,
                         ),
                         hintText: 'E-mail / phone number',
                         inputTextStyle: TextStyles.font18BlackRegular,
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid email';
+                          }
+                          return null; // If validation passes
+                        },
                       ),
                       verticalSpace(19),
                       AppTextFormField(
+                        controller: _passwordController,
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 20.w,
                           vertical: 18.h,
                         ),
                         hintText: 'Password',
-                        validator: (value) {},
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter a valid password';
+                          }
+                          return null;
+                        },
                         isObscureText: isObscureText,
                         suffixIcon: GestureDetector(
                           onTap: () {
@@ -91,8 +112,32 @@ class _LoginScreenState extends State<LoginScreen> {
                 AppTextButton(
                   buttonText: 'Sign In',
                   textStyle: TextStyles.font18WhiteRegular,
-                  onPressed: () {},
+                  onPressed: () async {
+                    if (formKey.currentState!.validate()) {
+                      // Perform login and handle potential errors
+                      final message = await AuthService().login(
+                        email: _emailController.text,
+                        password: _passwordController.text,
+                      );
+
+                      if (message != null && message.contains('Success')) {
+                        // Navigate to the home screen if login is successful
+                        context.pushReplacementNamed(Routes.homeScreen);
+                      } else {
+                        // Show an error dialog using the ErrorDialog widget
+                        showDialog(
+                          context: context,
+                          builder: (context) => ErrorDialog(
+                            errorMessage:
+                                message ?? 'An unknown error occurred',
+                            titleErrorMessage: 'Login Error',
+                          ),
+                        );
+                      }
+                    }
+                  },
                 ),
+
                 verticalSpace(18),
                 const DontHaveAccountText(),
               ],
