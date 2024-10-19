@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
 
@@ -31,6 +33,9 @@ class NavBar extends StatelessWidget {
                 gap: 8,
                 tabs: [
                   GButton(
+                    // onPressed: () {
+                    //   context.pushReplacementNamed(Routes.homeScreen);
+                    // },
                     icon: Icons.home,
                     leading: Image.asset(
                       "assets/images/home_nav.png",
@@ -59,6 +64,9 @@ class NavBar extends StatelessWidget {
                     text: 'Categories',
                   ),
                   GButton(
+                    onPressed: () {
+                      context.pushReplacementNamed(Routes.cartScreen);
+                    },
                     icon: Icons.category,
                     leading: Image.asset(
                       "assets/images/cart_nav.png",
