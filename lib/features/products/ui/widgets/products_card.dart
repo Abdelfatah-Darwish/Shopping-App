@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
-import 'package:shopping_app/features/products/data/model/products_model.dart';
+import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 import 'package:shopping_app/features/products/ui/widgets/show_image_product_in_card.dart';
 
 class ProductCard extends StatelessWidget {
@@ -35,21 +35,20 @@ class ProductCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        product.title,
+                        product.title!,
                         style: TextStyles.font12lightGreyRegular,
                       ),
                       //  maybe romev it and but after price
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              const Icon(Icons.star,
-                                  color: Colors.amber, size: 12),
-                              Text(
-                                product.rating.rate.toString(),
-                                style: const TextStyle(fontSize: 12),
-                              ),
+                              Icon(Icons.star, color: Colors.amber, size: 12),
+                              // Text(
+                              //   product.rating.rate.toString(),
+                              //   style: const TextStyle(fontSize: 12),
+                              // ),
                             ],
                           ),
                         ],

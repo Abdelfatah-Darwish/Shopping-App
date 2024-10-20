@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopping_app/core/DI/dependency_injection.dart';
 import 'package:shopping_app/core/networking/api/product_services.dart';
 
 import 'package:shopping_app/core/theming/colors.dart';
+import 'package:shopping_app/features/products/data/repositories/products_repo.dart';
 
 import 'package:shopping_app/features/products/logic/cubit/products_cubit.dart';
 import 'package:shopping_app/features/products/logic/cubit/products_state.dart';
@@ -15,10 +17,8 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProductCubit(
-        ProductServices(Dio()),
-      )..fetchProducts(),
-      child: Container(
+      create: (context) => getIt<ProductCubit>()..fetchProducts(),
+      child: SizedBox(
         width: double.infinity,
         child: BlocBuilder<ProductCubit, ProductState>(
           builder: (context, state) {
@@ -32,7 +32,7 @@ class ProductScreen extends StatelessWidget {
             } else if (state is ProductError) {
               return Center(child: Text('Error: ${state.message}'));
             } else {
-              return Center(child: Text('No products available.'));
+              return const Center(child: Text('No products available.'));
             }
           },
         ),

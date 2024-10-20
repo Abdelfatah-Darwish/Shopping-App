@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/theming/colors.dart';
-import 'package:shopping_app/features/products/data/model/products_model.dart';
+import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 
 class ImageProductsCard extends StatefulWidget {
   final Product product;
@@ -19,7 +19,7 @@ class _ImageProductsCardState extends State<ImageProductsCard> {
   void initState() {
     super.initState();
     // Initialize the isSelected list with false for each item
-    isSelected = List<bool>.filled(widget.product.image.length, false);
+    isSelected = List<bool>.filled(widget.product.image!.length, false);
   }
 
   @override
@@ -32,7 +32,7 @@ class _ImageProductsCardState extends State<ImageProductsCard> {
             topRight: Radius.circular(12),
           ),
           child: Image.network(
-            widget.product.image,
+            widget.product.image!,
             fit: BoxFit.cover,
             width: double.infinity,
           ),
@@ -52,15 +52,15 @@ class _ImageProductsCardState extends State<ImageProductsCard> {
           bottom: 4,
           right: 8,
           child: CircleAvatar(
-            backgroundColor: isSelected[widget.product.id]
+            backgroundColor: isSelected[widget.product.id!]
                 ? ColorsManager.pink
                 : ColorsManager.white,
             child: IconButton(
               onPressed: () {
                 setState(() {
                   // Toggle selection state
-                  isSelected[widget.product.id] =
-                      !isSelected[widget.product.id];
+                  isSelected[widget.product.id!] =
+                      !isSelected[widget.product.id!];
                 });
               },
               icon: const Icon(Icons.add_shopping_cart),
