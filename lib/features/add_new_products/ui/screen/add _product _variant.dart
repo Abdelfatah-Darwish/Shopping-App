@@ -5,7 +5,6 @@ import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/add_new_products/ui/widgets/pick_categorise.dart';
 import 'package:shopping_app/features/add_new_products/ui/widgets/price_and_stock.dart';
-import 'package:shopping_app/features/add_new_products/ui/widgets/product_name_description.dart';
 import 'package:shopping_app/features/add_new_products/ui/widgets/product_size.dart';
 import 'package:shopping_app/features/add_new_products/ui/widgets/upload_image.dart';
 

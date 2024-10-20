@@ -17,7 +17,12 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
+      //by using Dependency Injection
       create: (context) => getIt<ProductCubit>()..fetchProducts(),
+      //Without using Dependency Injection.
+      // create: (context) => ProductCubit(
+      //   ProductsRepo(ProductServices(Dio())),
+      // )..fetchProducts(),
       child: SizedBox(
         width: double.infinity,
         child: BlocBuilder<ProductCubit, ProductState>(

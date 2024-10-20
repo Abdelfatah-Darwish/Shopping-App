@@ -6,6 +6,7 @@ import 'package:shopping_app/features/products/data/model/model_from_extension/p
 import 'package:shopping_app/features/products/ui/widgets/show_image_product_in_card.dart';
 
 class ProductCard extends StatelessWidget {
+  //final product = products[index];
   final Product product;
 
   const ProductCard({super.key, required this.product});
@@ -39,16 +40,17 @@ class ProductCard extends StatelessWidget {
                         style: TextStyles.font12lightGreyRegular,
                       ),
                       //  maybe romev it and but after price
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              Icon(Icons.star, color: Colors.amber, size: 12),
-                              // Text(
-                              //   product.rating.rate.toString(),
-                              //   style: const TextStyle(fontSize: 12),
-                              // ),
+                              const Icon(Icons.star,
+                                  color: Colors.amber, size: 12),
+                              Text(
+                                product.rating!.rate.toString(),
+                                style: const TextStyle(fontSize: 12),
+                              ),
                             ],
                           ),
                         ],

@@ -3,6 +3,7 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 
 class ImageProductsCard extends StatefulWidget {
+  // final product = products[index];
   final Product product;
   const ImageProductsCard({super.key, required this.product});
 
