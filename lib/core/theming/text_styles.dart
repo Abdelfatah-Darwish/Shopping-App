@@ -138,6 +138,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.pink,
   );
+  static TextStyle font12PinkBold = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.pink,
+  );
   static TextStyle font12BlueRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
