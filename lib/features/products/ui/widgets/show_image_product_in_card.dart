@@ -1,74 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
+import 'package:shopping_app/features/products/logic/product_selection_cubit/product_selection_cubit.dart'; // Import the Cubit
 
-class ImageProductsCard extends StatefulWidget {
-  // final product = products[index];
+class ImageProductsCard extends StatelessWidget {
   final Product product;
   const ImageProductsCard({super.key, required this.product});
 
   @override
-  State<ImageProductsCard> createState() => _ImageProductsCardState();
-}
-
-class _ImageProductsCardState extends State<ImageProductsCard> {
-  // List to track whether each item is selected
-  late List<bool> isSelected;
-  //late int index;
-
-  @override
-  void initState() {
-    super.initState();
-    // Initialize the isSelected list with false for each item
-    isSelected = List<bool>.filled(widget.product.image!.length, false);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(12),
-            topRight: Radius.circular(12),
-          ),
-          child: Image.network(
-            widget.product.image!,
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-        ),
-        Positioned(
-          top: 8,
-          left: 8,
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            child: IconButton(
-              onPressed: () {},
-              icon: Image.asset('assets/images/love.png'),
+    return BlocBuilder<ProductSelectionCubit, Map<int, bool>>(
+      builder: (context, selectedProducts) {
+        final isSelected = selectedProducts[product.id] ?? false;
+
+        return Stack(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+              ),
+              child: Image.network(
+                product.image!,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
             ),
-          ),
-        ),
-        Positioned(
-          bottom: 4,
-          right: 8,
-          child: CircleAvatar(
-            backgroundColor: isSelected[widget.product.id!]
-                ? ColorsManager.pink
-                : ColorsManager.white,
-            child: IconButton(
-              onPressed: () {
-                setState(() {
-                  // Toggle selection state
-                  isSelected[widget.product.id!] =
-                      !isSelected[widget.product.id!];
-                });
-              },
-              icon: const Icon(Icons.add_shopping_cart),
+            Positioned(
+              top: 8,
+              left: 8,
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Image.asset('assets/images/love.png'),
+                ),
+              ),
             ),
-          ),
-        ),
-      ],
+            Positioned(
+              bottom: 4,
+              right: 8,
+              child: CircleAvatar(
+                backgroundColor:
+                    isSelected ? ColorsManager.pink : ColorsManager.white,
+                child: IconButton(
+                  onPressed: () {
+                    context.read<ProductSelectionCubit>().toggleSelection(product.id!);
+                  },
+                  icon: const Icon(Icons.add_shopping_cart),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
