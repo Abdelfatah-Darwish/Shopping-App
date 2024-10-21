@@ -9,6 +9,7 @@ import 'package:shopping_app/features/products/data/repositories/products_repo.d
 
 import 'package:shopping_app/features/products/logic/cubit/products_cubit.dart';
 import 'package:shopping_app/features/products/logic/cubit/products_state.dart';
+import 'package:shopping_app/features/products/logic/product_selection_cubit/product_selection_cubit.dart';
 import 'package:shopping_app/features/products/ui/widgets/grid_for_product.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -16,13 +17,21 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      //by using Dependency Injection
-      create: (context) => getIt<ProductCubit>()..fetchProducts(),
-      //Without using Dependency Injection.
-      // create: (context) => ProductCubit(
-      //   ProductsRepo(ProductServices(Dio())),
-      // )..fetchProducts(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          //by using Dependency Injection
+          create: (context) => getIt<ProductCubit>()..fetchProducts(),
+          //Without using Dependency Injection.
+          // create: (context) => ProductCubit(
+          //   ProductsRepo(ProductServices(Dio())),
+          // )..fetchProducts(),
+        ),
+        //this for cubit this cubit to store the selection item i want to add to cart.
+        BlocProvider(
+          create: (context) => ProductSelectionCubit(),
+        ),
+      ],
       child: SizedBox(
         width: double.infinity,
         child: BlocBuilder<ProductCubit, ProductState>(
@@ -35,7 +44,7 @@ class ProductScreen extends StatelessWidget {
             } else if (state is ProductLoaded) {
               return ProductGrid(products: state.products);
             } else if (state is ProductError) {
-              return Center(child: Text('Error: ${state.message}'));
+              return Center(child: Text('Error: //${state.message}'));
             } else {
               return const Center(child: Text('No products available.'));
             }
