@@ -67,12 +67,17 @@ class TextStyles {
   );
   static TextStyle font15BlackSemiBold = TextStyle(
     fontSize: 15.sp,
-    fontWeight: FontWeightHelper.semiBold,
+    fontWeight: FontWeightHelper.bold,
     color: ColorsManager.black,
   );
   //
   static TextStyle font13blackSemiBold = TextStyle(
     fontSize: 13.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.black,
+  );
+  static TextStyle font18blackSemiBold = TextStyle(
+    fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.black,
   );
