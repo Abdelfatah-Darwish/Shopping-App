@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
@@ -77,7 +79,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         buttonHeight: 48,
                         buttonText: 'place order',
                         textStyle: TextStyles.font20WhiteSemiBold,
-                        onPressed: () {},
+                        onPressed: () {
+                          context
+                              .pushReplacementNamed(Routes.checkoutDoneScreen);
+                        },
                       ),
                     ],
                   ),
