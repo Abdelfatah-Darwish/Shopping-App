@@ -3,7 +3,8 @@ import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/features/add_new_products/ui/screen/add%20_product%20_variant.dart';
 import 'package:shopping_app/features/add_new_products/ui/screen/add_product_screen.dart';
 import 'package:shopping_app/features/authentication/ui/authentication_screen.dart';
-import 'package:shopping_app/features/home/ui/home_screen.dart';
+import 'package:shopping_app/features/cart/ui/cart_screen.dart';
+import 'package:shopping_app/features/checkout/ui/checkout_screen.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
 import 'package:shopping_app/features/login/ui/login_screen.dart';
 import 'package:shopping_app/features/product_details/screens/product_details_screen.dart';
@@ -32,6 +33,15 @@ class AppRouter {
       case Routes.profileScreen:
         return MaterialPageRoute(
           builder: (_) => const ProfileScreen(),
+        );
+      case Routes.cartScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CartScreen(),
+        );
+
+      case Routes.checkoutScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CheckoutScreen(),
         );
       case Routes.authenticationScreen:
         return MaterialPageRoute(

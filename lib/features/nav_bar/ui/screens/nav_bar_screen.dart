@@ -33,69 +33,67 @@ class NavBar extends StatelessWidget {
                 gap: 8,
                 tabs: [
                   GButton(
-                      icon: Icons.home,
-                      leading: Image.asset(
-                        "assets/images/home_nav.png",
-                        width: 20.w,
-                        height: 20.h,
-                        color: BlocProvider.of<NavBarCubit>(context)
-                                    .selectedIndex ==
-                                0
-                            ? ColorsManager.pink
-                            : ColorsManager.black,
-                      ),
-                      text: 'Home',
-                      onPressed: () {
-                        context.pushNamed(Routes.homeScreen);
-                      }),
+                    // onPressed: () {
+                    //   context.pushReplacementNamed(Routes.homeScreen);
+                    // },
+                    icon: Icons.home,
+                    leading: Image.asset(
+                      "assets/images/home_nav.png",
+                      width: 20.w,
+                      height: 20.h,
+                      color:
+                          BlocProvider.of<NavBarCubit>(context).selectedIndex ==
+                                  0
+                              ? ColorsManager.pink
+                              : ColorsManager.black,
+                    ),
+                    text: 'Home',
+                  ),
                   GButton(
-                      icon: Icons.list_alt,
-                      leading: Image.asset(
-                        "assets/images/category.png",
-                        width: 20.w,
-                        height: 20.h,
-                        color: BlocProvider.of<NavBarCubit>(context)
-                                    .selectedIndex ==
-                                1
-                            ? ColorsManager.pink
-                            : ColorsManager.black,
-                      ),
-                      text: 'Categories',
-                      onPressed: () {
-                        context.pushNamed(Routes.wishListScreen);
-                      }),
+                    icon: Icons.list_alt,
+                    leading: Image.asset(
+                      "assets/images/category.png",
+                      width: 20.w,
+                      height: 20.h,
+                      color:
+                          BlocProvider.of<NavBarCubit>(context).selectedIndex ==
+                                  1
+                              ? ColorsManager.pink
+                              : ColorsManager.black,
+                    ),
+                    text: 'Categories',
+                  ),
                   GButton(
-                      icon: Icons.category,
-                      leading: Image.asset(
-                        "assets/images/cart_nav.png",
-                        width: 20.w,
-                        height: 20.h,
-                        color: BlocProvider.of<NavBarCubit>(context)
-                                    .selectedIndex ==
-                                2
-                            ? ColorsManager.pink
-                            : ColorsManager.black,
-                      ),
-                      text: 'Cart',
-                      onPressed: () {
-                        context.pushNamed(Routes.wishListScreen);
-                      }),
+                    onPressed: () {
+                      context.pushReplacementNamed(Routes.cartScreen);
+                    },
+                    icon: Icons.category,
+                    leading: Image.asset(
+                      "assets/images/cart_nav.png",
+                      width: 20.w,
+                      height: 20.h,
+                      color:
+                          BlocProvider.of<NavBarCubit>(context).selectedIndex ==
+                                  2
+                              ? ColorsManager.pink
+                              : ColorsManager.black,
+                    ),
+                    text: 'Cart',
+                  ),
                   GButton(
-                      icon: Icons.favorite,
-                      leading: Image.asset(
-                        "assets/images/fav_nav.png",
-                        width: 20.w,
-                        height: 20.h,
-                        color: BlocProvider.of<NavBarCubit>(context)
-                                    .selectedIndex ==
-                                3
-                            ? ColorsManager.pink
-                            : ColorsManager.black,
-                      ),
-                      text: 'Wishlist',
-                      onPressed: () {
-                        context.pushNamed(Routes.wishListScreen);
-                      }),
+                    icon: Icons.favorite,
+                    leading: Image.asset(
+                      "assets/images/fav_nav.png",
+                      width: 20.w,
+                      height: 20.h,
+                      color:
+                          BlocProvider.of<NavBarCubit>(context).selectedIndex ==
+                                  3
+                              ? ColorsManager.pink
+                              : ColorsManager.black,
+                    ),
+                    text: 'Wishlist',
+                  ),
                 ]),
           );
         },

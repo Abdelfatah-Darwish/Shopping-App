@@ -7,6 +7,8 @@ import 'dart:io';
 import 'package:shopping_app/delete_this_after_merge/theming/colors.dart';
 
 class UploadImage extends StatefulWidget {
+  const UploadImage({super.key});
+
   @override
   _UploadImageState createState() => _UploadImageState();
 }

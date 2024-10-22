@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/features/products/data/model/products_model.dart';
 
 class DisplayImageOfProduct extends StatelessWidget {
@@ -22,7 +24,9 @@ class DisplayImageOfProduct extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushReplacementNamed(Routes.homeScreen);
+              },
               icon: Image.asset('assets/images/next.png'),
             ),
           ),
