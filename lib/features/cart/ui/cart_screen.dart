@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
@@ -6,6 +7,7 @@ import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/core/widgets/text_button.dart';
 import 'package:shopping_app/features/cart/ui/widgets/cart_app_bar.dart';
 import 'package:shopping_app/features/cart/ui/widgets/cart_items_list.dart';
+import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
 
 class CartScreen extends StatelessWidget {
@@ -14,7 +16,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: NavBar(),
+      bottomNavigationBar: NavBar(),
       body: SafeArea(
           child: Padding(
         padding:
