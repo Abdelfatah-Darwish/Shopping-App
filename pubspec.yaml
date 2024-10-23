@@ -30,46 +30,33 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
-
+  easy_localization: ^3.0.7
+  equatable: ^2.0.5
+  firebase_auth: ^5.3.1
+  firebase_core: ^3.6.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
-
+  flutter_native_splash: ^2.4.1
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.10+1
   freezed: ^2.5.7
   freezed_annotation: ^2.4.4
   get_it: ^8.0.0
-
+  google_maps_flutter: ^2.9.0
+  google_nav_bar: ^5.0.6
   image_picker: ^1.1.2
-
+  intl: ^0.19.0
   json_annotation: ^4.9.0
   json_serializable: ^6.8.0
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.1
   retrofit_generator: ^9.1.2
-
-  # localization
-  intl: ^0.19.0
-  easy_localization: ^3.0.7
-  # for splash screen
-  flutter_native_splash: ^2.4.1
-  # An SVG rendering and widget library for Flutter, which allows painting
-  flutter_svg: ^2.0.10+1
-  # for adapting screen and font size.
-  flutter_screenutil: ^5.9.3
-
-  # Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.
-  firebase_core: ^3.6.0
-  # Flutter plugin for Firebase Auth, enabling authentication using passwords, phone numbers and identity providers like Google, Facebook and Twitter.
-  firebase_auth: ^5.3.1
-
-  google_nav_bar: ^5.0.6
-  equatable: ^2.0.5
-  # To integrating Google Maps in iOS and Android applications.
-  google_maps_flutter: ^2.9.0
+  sqflite: ^2.4.0
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
   flutter_launcher_icons: "^0.14.1"
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
 
