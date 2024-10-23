@@ -24,6 +24,20 @@ class NavBar extends StatelessWidget {
                 onTabChange: (index) {
                   //  index start from zero , this func to nav between screens which related to Navbar
                   context.read<NavBarCubit>().updateIndex(index);
+                  switch (index) {
+                    case 0:
+                      context.pushNamed(Routes.homeScreen);
+                      break;
+                    // case 1:
+                    //   context.pushNamed(Routes.categoryScreen);
+                    // break;
+                    case 2:
+                      context.pushNamed(Routes.cartScreen);
+                      break;
+                    case 3:
+                      context.pushNamed(Routes.wishListScreen);
+                      break;
+                  }
                 },
                 backgroundColor: ColorsManager.white,
                 color: ColorsManager.black,
@@ -33,9 +47,6 @@ class NavBar extends StatelessWidget {
                 gap: 8,
                 tabs: [
                   GButton(
-                    onPressed: () {
-                      context.pushNamed(Routes.homeScreen);
-                    },
                     icon: Icons.home,
                     leading: Image.asset(
                       "assets/images/home_nav.png",
@@ -64,9 +75,6 @@ class NavBar extends StatelessWidget {
                     text: 'Categories',
                   ),
                   GButton(
-                    onPressed: () {
-                      context.pushNamed(Routes.cartScreen);
-                    },
                     icon: Icons.category,
                     leading: Image.asset(
                       "assets/images/cart_nav.png",
@@ -93,9 +101,6 @@ class NavBar extends StatelessWidget {
                               : ColorsManager.black,
                     ),
                     text: 'Wishlist',
-                    onPressed: () {
-                      context.pushNamed(Routes.wishListScreen);
-                    },
                   ),
                 ]),
           );
