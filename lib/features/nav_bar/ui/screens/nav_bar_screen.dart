@@ -33,9 +33,9 @@ class NavBar extends StatelessWidget {
                 gap: 8,
                 tabs: [
                   GButton(
-                    // onPressed: () {
-                    //   context.pushReplacementNamed(Routes.homeScreen);
-                    // },
+                    onPressed: () {
+                      context.pushNamed(Routes.homeScreen);
+                    },
                     icon: Icons.home,
                     leading: Image.asset(
                       "assets/images/home_nav.png",
@@ -65,7 +65,7 @@ class NavBar extends StatelessWidget {
                   ),
                   GButton(
                     onPressed: () {
-                      context.pushReplacementNamed(Routes.cartScreen);
+                      context.pushNamed(Routes.cartScreen);
                     },
                     icon: Icons.category,
                     leading: Image.asset(
@@ -93,6 +93,9 @@ class NavBar extends StatelessWidget {
                               : ColorsManager.black,
                     ),
                     text: 'Wishlist',
+                    onPressed: () {
+                      context.pushNamed(Routes.wishListScreen);
+                    },
                   ),
                 ]),
           );

@@ -13,8 +13,3 @@ class ColorsManager {
   static const Color blue = Color.fromRGBO(66, 133, 244, 1);
   static const Color darkerGrey = Color.fromRGBO(73, 70, 70, 1);
 }
-
-//   static const Color pink = Color(0x0fff1768);
-//   static const Color black = Color(0x0f000000);
-//   static const Color green = Color(0x0f2f8655);
-//   static const Color red = Color(0x0fdd222

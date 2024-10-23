@@ -10,6 +10,7 @@ import 'package:shopping_app/features/checkout/ui/widgets/custom_delivery_button
 import 'package:shopping_app/features/checkout/ui/widgets/order_items_list.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/payment_information.dart';
 import 'package:shopping_app/features/checkout/ui/widgets/payment_options.dart';
+import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -22,6 +23,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const NavBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(

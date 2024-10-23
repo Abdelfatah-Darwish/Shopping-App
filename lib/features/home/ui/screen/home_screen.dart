@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const NavBar(),
+      // bottomNavigationBar: const NavBar(),
       body: SafeArea(
         child: Container(
           width: double.infinity,
