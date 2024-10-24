@@ -178,14 +178,20 @@ class _CartItemsListState extends State<CartItemsList> {
                           horizontalSpace(70),
                           TextButton(
                             child: Text(
-                              'Edit',
+                              'Remove',
                               style: TextStyles.font12PinkRegular.copyWith(
                                 decoration: TextDecoration.underline,
                                 decorationColor:
                                     TextStyles.font12PinkRegular.color,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () async {
+                              int productId =
+                                  products[index]['id']; // Store the note ID
+                              await sqlDb.delete('products', 'id=$productId');
+
+                              fetchNotes();
+                            },
                           ),
                         ],
                       ),
