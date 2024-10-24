@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/local_database/sql_db.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/cart/ui/widgets/counter_widget.dart';
@@ -66,14 +67,28 @@ class _CartItemsListState extends State<CartItemsList> {
     },
   ];
 
+  Version sqlDb = Version();
+  List<Map> products = [];
+
+  Future<void> fetchNotes() async {
+    // Fetch data from the database
+
+    List<Map> response = await sqlDb.read('products');
+
+    setState(() {
+      products = response;
+    });
+  }
+
   // List to track whether each item is selected
-  late List<bool> isSelected;
+  //late List<bool> isSelected;
 
   @override
   void initState() {
     super.initState();
     // Initialize the isSelected list with false for each item
-    isSelected = List<bool>.filled(items.length, false);
+    //isSelected = List<bool>.filled(products.length, false);
+    fetchNotes();
   }
 
   @override
@@ -82,7 +97,7 @@ class _CartItemsListState extends State<CartItemsList> {
       // physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
-      itemCount: items.length,
+      itemCount: products.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
@@ -93,9 +108,11 @@ class _CartItemsListState extends State<CartItemsList> {
             decoration: BoxDecoration(
               border: Border.all(
                 // Change border color based on isSelected
-                color: isSelected[index]
-                    ? Colors.pink
-                    : const Color.fromRGBO(0, 0, 0, 490),
+                color:
+                    // isSelected[index]
+                    //      Colors.pink
+                    //     :
+                    const Color.fromRGBO(0, 0, 0, 490),
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(13.0),
@@ -104,8 +121,9 @@ class _CartItemsListState extends State<CartItemsList> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(11),
-                  child: Image.asset(
-                    items[index]["image"]!,
+                  child: Image.network(
+                    products[index]['image'],
+                    //notes[index]['title']
                     width: 77.w,
                     height: 87.h,
                     fit: BoxFit.cover,
@@ -121,7 +139,7 @@ class _CartItemsListState extends State<CartItemsList> {
                           SizedBox(
                             width: 180.w,
                             child: Text(
-                              items[index]["title"]!,
+                              products[index]['title'],
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyles.font16BlackRegular,
@@ -131,16 +149,17 @@ class _CartItemsListState extends State<CartItemsList> {
                             padding: EdgeInsets.only(left: 16.w, right: 11.w),
                             child: InkWell(
                               onTap: () {
-                                setState(() {
-                                  // Toggle selection state
-                                  isSelected[index] = !isSelected[index];
-                                });
+                                // setState(() {
+                                //   // Toggle selection state
+                                //   isSelected[index] = !isSelected[index];
+                                // });
                               },
                               child: Image.asset(
                                 // Change image based on isSelected
-                                isSelected[index]
-                                    ? 'assets/images/icon_button_is_selected.png'
-                                    : 'assets/images/icon_button_not_selected.png',
+                                // isSelected[index]
+                                //      'assets/images/icon_button_is_selected.png'
+                                //     :
+                                'assets/images/icon_button_not_selected.png',
                                 fit: BoxFit.fill,
                                 width: 18.w,
                                 height: 18.h,
@@ -150,7 +169,7 @@ class _CartItemsListState extends State<CartItemsList> {
                         ],
                       ),
                       Text(
-                        items[index]["price"]!,
+                        products[index]["price"]!,
                         style: TextStyles.font16BlackSemiBold,
                       ),
                       Row(
