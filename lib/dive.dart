@@ -1,11 +1,25 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/routing/app_router.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 
-class Dive extends StatelessWidget {
+class Dive extends StatefulWidget {
   final AppRouter appRouter;
   const Dive({super.key, required this.appRouter});
+
+  @override
+  State<Dive> createState() => _DiveState();
+}
+
+class _DiveState extends State<Dive> {
+  User? user;
+
+  @override
+  void initState() {
+    super.initState();
+    user = FirebaseAuth.instance.currentUser;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +33,9 @@ class Dive extends StatelessWidget {
             scaffoldBackgroundColor: const Color(0xFFFCFCFC),
           ),
           debugShowCheckedModeBanner: false,
-          initialRoute: Routes.loginScreen,
-          onGenerateRoute: appRouter.generateRoute,
+          initialRoute:
+              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
+          onGenerateRoute: widget.appRouter.generateRoute,
         ));
   }
 }
