@@ -4,6 +4,7 @@ import 'package:shopping_app/features/add_new_products/ui/screen/add%20_product%
 import 'package:shopping_app/features/add_new_products/ui/screen/add_product_screen.dart';
 import 'package:shopping_app/features/authentication/ui/authentication_screen.dart';
 import 'package:shopping_app/features/cart/ui/cart_screen.dart';
+import 'package:shopping_app/features/category/ui/screen/category_screen.dart';
 import 'package:shopping_app/features/checkout/ui/checkout_screen.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
 import 'package:shopping_app/features/login/ui/login_screen.dart';
@@ -11,6 +12,7 @@ import 'package:shopping_app/features/product_details/screens/product_details_sc
 import 'package:shopping_app/features/products/ui/screen/wishlist_screen.dart';
 import 'package:shopping_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:shopping_app/features/sign_up/ui/sign_up_screen.dart';
+import 'package:shopping_app/features/wishlist/ui/wish.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -54,6 +56,10 @@ class AppRouter {
       case Routes.AddProductVariantScreen:
         return MaterialPageRoute(
           builder: (_) => const AddProductVariant(),
+        );
+      case Routes.categoryScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CategoryScreen(),
         );
       case Routes.wishListScreen:
         return MaterialPageRoute(
