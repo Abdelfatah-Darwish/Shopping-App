@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/local_database/sql_db.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 import 'package:shopping_app/features/products/logic/product_selection_cubit/product_selection_cubit.dart'; // Import the Cubit
@@ -10,6 +13,7 @@ class ImageProductsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Version sqlDb = Version();
     return BlocBuilder<ProductSelectionCubit, Map<int, bool>>(
       builder: (context, selectedProducts) {
         final isSelected = selectedProducts[product.id] ?? false;
@@ -45,8 +49,24 @@ class ImageProductsCard extends StatelessWidget {
                 backgroundColor:
                     isSelected ? ColorsManager.pink : ColorsManager.white,
                 child: IconButton(
-                  onPressed: () {
-                    context.read<ProductSelectionCubit>().toggleSelection(product.id!);
+                  onPressed: () async {
+                    context
+                        .read<ProductSelectionCubit>()
+                        .toggleSelection(product.id!);
+
+                    int response = await sqlDb.insert(
+                      'products',
+                      {
+                        'id': product.id,
+                        'title': product.title,
+                        'price': product.price,
+                        'image': product.image,
+                      },
+                    );
+                    //response > 0 : means that insert is successful.
+                    if (response > 0) {
+                      context.pushReplacementNamed(Routes.cartScreen);
+                    }
                   },
                   icon: const Icon(Icons.add_shopping_cart),
                 ),

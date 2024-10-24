@@ -21,7 +21,7 @@ class Version {
     String databasePath = await getDatabasesPath();
     String path = join(databasePath, 'diva.db');
     Database mydb = await openDatabase(path,
-        onCreate: _onCreate, version: 8, onUpgrade: _onUpgrade);
+        onCreate: _onCreate, version: 1, onUpgrade: _onUpgrade);
     return mydb;
   }
 
@@ -39,11 +39,11 @@ class Version {
     Batch batch = db.batch();
 
     batch.execute('''
-  CREATE TABLE "notes" (
-    "id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT,
+  CREATE TABLE "products" (
+    "id" INTEGER  NOT NULL,
     "title" TEXT NOT NULL,
-    "note" TEXT NOT NULL,
-    "color" TEXT NOT NULL
+    "price" TEXT NOT NULL,
+    "image" TEXT NOT NULL
   )
  ''');
 
