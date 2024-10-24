@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/features/category/logic/cubit/category_cubit.dart';
+import 'package:shopping_app/features/category/logic/cubit/category_state.dart';
+import 'package:shopping_app/features/products/logic/cubit/products_cubit.dart';
 
 class BuildProductCategory extends StatelessWidget {
   const BuildProductCategory({super.key});
@@ -46,17 +48,15 @@ class BuildProductCategory extends StatelessWidget {
 //   not clean function , i will try refactor it -> "noran"
   Widget _buildProductCategory(BuildContext context,
       {required int index, required String name, required int selectedIndex}) {
-    final isSelected = index ==
-        selectedIndex; // Check if this category is selected by comparing the initial index by selected index
-
+    final isSelected = index == selectedIndex;
     return GestureDetector(
       onTap: () {
         context
             .read<CategoryCubit>()
-            .updateIndex(index); // Update the selected index when tapped
+            .updateIndex(index); // Update selected index
       },
       child: Container(
-        width: 80.w,
+        width: 110.w,
         height: 30.h,
         margin: const EdgeInsets.only(right: 14),
         alignment: Alignment.center,

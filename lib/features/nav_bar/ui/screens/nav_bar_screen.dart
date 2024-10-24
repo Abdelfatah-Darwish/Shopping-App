@@ -24,8 +24,7 @@ class NavBar extends StatelessWidget {
                   context.pushReplacementNamed(Routes.homeScreen);
                   break;
                 case 1:
-
-                  // context.pushReplacementNamed(Routes.categoryScreen);
+                  context.pushReplacementNamed(Routes.categoryScreen);
                   break;
                 case 2:
                   context.pushReplacementNamed(Routes.cartScreen);
