@@ -16,9 +16,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: ColorsManager.white,
         appBar: AppBar(
-          backgroundColor: ColorsManager.white,
           title: Text(
             "Profial",
             style: TextStyles.font20BlackSemiBold.copyWith(color: Colors.black),
