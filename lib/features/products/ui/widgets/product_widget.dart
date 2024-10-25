@@ -9,6 +9,7 @@ import 'package:shopping_app/features/products/data/repositories/products_repo.d
 
 import 'package:shopping_app/features/products/logic/cubit/products_cubit.dart';
 import 'package:shopping_app/features/products/logic/cubit/products_state.dart';
+import 'package:shopping_app/features/products/logic/favorite_cubit/favorite_cubit.dart';
 import 'package:shopping_app/features/products/logic/product_selection_cubit/product_selection_cubit.dart';
 import 'package:shopping_app/features/products/ui/widgets/grid_for_product.dart';
 
@@ -30,6 +31,11 @@ class ProductScreen extends StatelessWidget {
         //this for cubit this cubit to store the selection item i want to add to cart.
         BlocProvider(
           create: (context) => ProductSelectionCubit(),
+        ),
+
+        //when you click the favorite button, it will toggle the icon state between Icons.favorite and Icons.favorite_border.
+        BlocProvider(
+          create: (context) => FavoriteCubit(),
         ),
       ],
       child: SizedBox(

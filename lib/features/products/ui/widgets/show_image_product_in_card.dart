@@ -5,7 +5,8 @@ import 'package:shopping_app/core/local_database/sql_db.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
-import 'package:shopping_app/features/products/logic/product_selection_cubit/product_selection_cubit.dart'; // Import the Cubit
+import 'package:shopping_app/features/products/logic/product_selection_cubit/product_selection_cubit.dart';
+import 'package:shopping_app/features/products/logic/favorite_cubit/favorite_cubit.dart'; // Import the FavoriteCubit
 
 class ImageProductsCard extends StatelessWidget {
   final Product product;
@@ -34,12 +35,24 @@ class ImageProductsCard extends StatelessWidget {
             Positioned(
               top: 8,
               left: 8,
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Image.asset('assets/images/love.png'),
-                ),
+              child: BlocBuilder<FavoriteCubit, Map<int, bool>>(
+                builder: (context, favoriteProducts) {
+                  final isFavorite = favoriteProducts[product.id] ?? false;
+                  return CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      onPressed: () {
+                        context
+                            .read<FavoriteCubit>()
+                            .toggleFavorite(product.id!);
+                      },
+                      icon: Icon(
+                        isFavorite ? Icons.favorite : Icons.favorite_border,
+                        color: isFavorite ? Colors.red : Colors.grey,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
             Positioned(
@@ -54,7 +67,6 @@ class ImageProductsCard extends StatelessWidget {
                         .read<ProductSelectionCubit>()
                         .toggleSelection(product.id!);
 
-                    // Check if the product exists in the database
                     List<Map> existingProduct = await sqlDb.readSpecific(
                       'products',
                       where: 'id = ?',
@@ -62,11 +74,9 @@ class ImageProductsCard extends StatelessWidget {
                     );
 
                     if (existingProduct.isNotEmpty) {
-                      // Product already exists in the database, do not insert again
                       print("Product is already in the cart.");
                       context.pushReplacementNamed(Routes.cartScreen);
                     } else {
-                      // Product doesn't exist, insert it
                       int response = await sqlDb.insert(
                         'products',
                         {
