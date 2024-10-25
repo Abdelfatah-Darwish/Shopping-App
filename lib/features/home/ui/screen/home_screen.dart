@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
@@ -8,13 +8,13 @@ import 'package:shopping_app/features/category/ui/widgets/build_product_category
 import 'package:shopping_app/features/home/ui/widgets/banner_Ads.dart';
 import 'package:shopping_app/features/home/ui/widgets/custom_search_bar.dart';
 import 'package:shopping_app/features/home/ui/widgets/home_top_bar.dart';
-import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
-import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
 
+import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
+import 'package:shopping_app/features/products/data/model/products_model.dart';
 import 'package:shopping_app/features/products/ui/widgets/product_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(15),
               const BuildProductCategory(),
               verticalSpace(5),
-              const ProductScreen(),
+              const ProductScreen()
             ],
           ),
         ),

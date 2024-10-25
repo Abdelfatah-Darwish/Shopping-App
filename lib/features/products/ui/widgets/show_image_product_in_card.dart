@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/features/products/data/model/products_model.dart';
-import 'package:shopping_app/features/wishlist/data/sqlflite_for_wishlist.dart';
-import 'package:shopping_app/features/wishlist/ui/widgets/app_favourite_icon.dart'; // Database helper import
 
 class ImageProductsCard extends StatefulWidget {
   final Product product;
+
   const ImageProductsCard({super.key, required this.product});
 
   @override
@@ -13,11 +12,6 @@ class ImageProductsCard extends StatefulWidget {
 }
 
 class _ImageProductsCardState extends State<ImageProductsCard> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -33,13 +27,17 @@ class _ImageProductsCardState extends State<ImageProductsCard> {
             width: double.infinity,
           ),
         ),
-
         Positioned(
           top: 8,
           left: 8,
-          child: AppFavouriteIcon(),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            child: IconButton(
+              onPressed: () {},
+              icon: Image.asset('assets/images/love.png'),
+            ),
+          ),
         ),
-        // Add to cart button
         Positioned(
           bottom: 4,
           right: 8,
