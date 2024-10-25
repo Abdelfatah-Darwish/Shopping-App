@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/local_database/sql_db.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
-import 'package:shopping_app/features/cart/logic/selection_cubit/cart_cubit.dart';
+import 'package:shopping_app/features/cart/logic/selection_cubit/selection_cubit.dart';
+import 'package:shopping_app/features/cart/logic/selection_cubit/selection_state.dart';
 import 'package:shopping_app/features/cart/ui/widgets/counter_widget.dart';
 
 class CartItemsList extends StatefulWidget {
@@ -20,7 +21,6 @@ class _CartItemsListState extends State<CartItemsList> {
 
   Future<void> fetchNotes() async {
     List<Map> response = await sqlDb.read('products');
-
     setState(() {
       products = response;
     });
@@ -35,7 +35,7 @@ class _CartItemsListState extends State<CartItemsList> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => CartCubit(),
+      create: (_) => SelectionCubit(),
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
@@ -43,13 +43,13 @@ class _CartItemsListState extends State<CartItemsList> {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
-            child: BlocBuilder<CartCubit, Map<int, bool>>(
-              builder: (context, selectedItems) {
-                bool isSelected = selectedItems[index] ?? false;
+            child: BlocBuilder<SelectionCubit, SelectionState>(
+              builder: (context, selectionState) {
+                bool isSelected = selectionState.selectedItems[index] ?? false;
 
                 return GestureDetector(
                   onTap: () {
-                    context.read<CartCubit>().toggleSelection(index);
+                    context.read<SelectionCubit>().toggleSelection(index);
                   },
                   child: Container(
                     padding: const EdgeInsets.only(left: 8),
@@ -97,7 +97,7 @@ class _CartItemsListState extends State<CartItemsList> {
                                     child: InkWell(
                                       onTap: () {
                                         context
-                                            .read<CartCubit>()
+                                            .read<SelectionCubit>()
                                             .toggleSelection(index);
                                       },
                                       child: Image.asset(
