@@ -91,9 +91,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         style: TextStyles.font16BlackSemiBold,
                       ),
                       verticalSpace(6),
-                      PaymentInformation(
-                        products: products,
-                      ),
+                      const PaymentInformation(),
                       verticalSpace(24),
                       AppTextButton(
                         verticalPadding: 2,

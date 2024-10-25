@@ -4,8 +4,8 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 
 class PaymentInformation extends StatefulWidget {
-  final List<Map> products;
-  const PaymentInformation({super.key, required this.products});
+  
+  const PaymentInformation({super.key});
 
   @override
   State<PaymentInformation> createState() => _PaymentInformationState();
@@ -13,35 +13,37 @@ class PaymentInformation extends StatefulWidget {
 
 class _PaymentInformationState extends State<PaymentInformation> {
   Version sqlDb = Version();
-
-  //double? totalPrice;
+  double? totalPrice = 0.00;
+  double discount = 50.00; // Discount amount
 
   Future<double> getTotalPrice() async {
-    double totalPrice = await sqlDb.getTotalPrice('products');
-    return totalPrice;
+    double total = await sqlDb.getTotalPrice('products');
+    return total;
   }
-
-  double? totalPrice = 0.00;
 
   @override
   void initState() {
     super.initState();
-    getTotalPrice().then((value) => setState(() => totalPrice = value));
+    getTotalPrice().then((value) {
+      setState(() => totalPrice = value);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    double discountedTotal = (totalPrice ?? 0.00) - discount;
+
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Suptotal',
+              'Subtotal',
               style: TextStyles.font16lightGreyRegular,
             ),
             Text(
-              totalPrice!.toStringAsFixed(2),
+              '${totalPrice!.toStringAsFixed(2)} L.E',
               style: TextStyles.font15grayRegular,
             ),
           ],
@@ -54,30 +56,14 @@ class _PaymentInformationState extends State<PaymentInformation> {
               style: TextStyles.font16lightGreyRegular,
             ),
             Text(
-              '- 200 L.E',
+              '- $discount L.E',
               style: TextStyles.font15pinkRegular,
             ),
           ],
         ),
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [
-        //     Text(
-        //       'Delivery fee',
-        //       style: TextStyles.font16lightGreyRegular,
-        //     ),
-        //     Text(
-        //       '40 L.E',
-        //       style: TextStyles.font15grayRegular,
-        //     ),
-        //   ],
-        // ),
         Divider(
-          color: ColorsManager.darkGrey
-              .withOpacity(0.1), // Set the color of the line
-          thickness: 1.0, // Set the thickness of the line
-          indent: 0, // Optional: Indent from the left
-          endIndent: 0, // Optional: Indent from the right
+          color: ColorsManager.darkGrey.withOpacity(0.1),
+          thickness: 1.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,7 +73,7 @@ class _PaymentInformationState extends State<PaymentInformation> {
               style: TextStyles.font15BlackSemiBold,
             ),
             Text(
-              '1,050 L.E',
+              '${discountedTotal.toStringAsFixed(2)} L.E',
               style: TextStyles.font16BlackRegular,
             ),
           ],
