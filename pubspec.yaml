@@ -55,6 +55,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.1
   retrofit_generator: ^9.1.2
+  shared_preferences: ^2.3.2
   sqflite: ^2.4.0
 
 dev_dependencies:
