@@ -100,4 +100,15 @@ class Version {
     int response = await mydb!.delete(table, where: whereId);
     return response;
   }
+
+
+
+  // Method to read specific product by ID
+  //search about product by id.
+  readSpecific(String table, {String? where, List<Object?>? whereArgs}) async {
+    Database? mydb = await db;
+    List<Map> response =
+        await mydb!.query(table, where: where, whereArgs: whereArgs);
+    return response;
+  }
 }

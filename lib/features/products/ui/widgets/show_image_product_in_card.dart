@@ -54,18 +54,31 @@ class ImageProductsCard extends StatelessWidget {
                         .read<ProductSelectionCubit>()
                         .toggleSelection(product.id!);
 
-                    int response = await sqlDb.insert(
+                    // Check if the product exists in the database
+                    List<Map> existingProduct = await sqlDb.readSpecific(
                       'products',
-                      {
-                        'id': product.id,
-                        'title': product.title,
-                        'price': product.price,
-                        'image': product.image,
-                      },
+                      where: 'id = ?',
+                      whereArgs: [product.id],
                     );
-                    //response > 0 : means that insert is successful.
-                    if (response > 0) {
+
+                    if (existingProduct.isNotEmpty) {
+                      // Product already exists in the database, do not insert again
+                      print("Product is already in the cart.");
                       context.pushReplacementNamed(Routes.cartScreen);
+                    } else {
+                      // Product doesn't exist, insert it
+                      int response = await sqlDb.insert(
+                        'products',
+                        {
+                          'id': product.id,
+                          'title': product.title,
+                          'price': product.price,
+                          'image': product.image,
+                        },
+                      );
+                      if (response > 0) {
+                        context.pushReplacementNamed(Routes.cartScreen);
+                      }
                     }
                   },
                   icon: const Icon(Icons.add_shopping_cart),
