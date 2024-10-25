@@ -11,8 +11,6 @@ class Product {
   final String image;
   final Rating rating;
 
-  var category;
-
   Product({
     required this.id,
     required this.title,
