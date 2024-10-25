@@ -52,7 +52,7 @@ class _CartItemsListState extends State<CartItemsList> {
               itemCount: products.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
+                  padding: const EdgeInsets.only(bottom: 16.0),
                   child: BlocBuilder<SelectionCubit, SelectionState>(
                     builder: (context, selectionState) {
                       // Ensure valid index for selectedItems
@@ -171,12 +171,18 @@ class _CartItemsListState extends State<CartItemsList> {
           // Display total price at the bottom
           BlocBuilder<SelectionCubit, SelectionState>(
             builder: (context, state) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Total Price: \$${state.totalPrice.toStringAsFixed(2)}',
-                  style: TextStyles.font16BlackSemiBold,
-                ),
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'TOTAL',
+                    style: TextStyles.font15BlackSemiBold,
+                  ),
+                  Text(
+                    '${state.totalPrice.toStringAsFixed(2)} L.E',
+                    style: TextStyles.font16BlackRegular,
+                  ),
+                ],
               );
             },
           ),

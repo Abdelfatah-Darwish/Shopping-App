@@ -22,20 +22,6 @@ class CartScreen extends StatelessWidget {
             const CartAppBar(),
             verticalSpace(16),
             const Expanded(child: CartItemsList()),
-            verticalSpace(12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'TOTAL',
-                  style: TextStyles.font15BlackSemiBold,
-                ),
-                Text(
-                  '1,050 L.E',
-                  style: TextStyles.font16BlackRegular,
-                ),
-              ],
-            ),
             verticalSpace(20),
             AppTextButton(
               verticalPadding: 2,
