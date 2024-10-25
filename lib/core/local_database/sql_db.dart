@@ -119,4 +119,11 @@ class Version {
     double totalPrice = result[0]["total"] ?? 0.0;
     return totalPrice;
   }
+
+  // Method to delete all items from the 'products' table without dropping the table.
+  Future<void> clearProductsTable() async {
+    Database? mydb = await db;
+    await mydb!.delete('products');
+    print("All items removed from products table.");
+  }
 }

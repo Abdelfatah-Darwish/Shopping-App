@@ -99,7 +99,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         buttonHeight: 48,
                         buttonText: 'place order',
                         textStyle: TextStyles.font20WhiteSemiBold,
-                        onPressed: () {
+                        onPressed: () async {
+                          await sqlDb.clearProductsTable();
                           context
                               .pushReplacementNamed(Routes.checkoutDoneScreen);
                         },
