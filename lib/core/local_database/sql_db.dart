@@ -101,8 +101,6 @@ class Version {
     return response;
   }
 
-
-
   // Method to read specific product by ID
   //search about product by id.
   readSpecific(String table, {String? where, List<Object?>? whereArgs}) async {
@@ -110,5 +108,15 @@ class Version {
     List<Map> response =
         await mydb!.query(table, where: where, whereArgs: whereArgs);
     return response;
+  }
+
+  // Method to get the total price of all products
+  Future<double> getTotalPrice(String table) async {
+    Database? mydb = await db;
+    List<Map<String, dynamic>> result =
+        await mydb!.rawQuery("SELECT SUM(price) as total FROM $table");
+
+    double totalPrice = result[0]["total"] ?? 0.0;
+    return totalPrice;
   }
 }
