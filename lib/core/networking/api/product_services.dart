@@ -11,4 +11,8 @@ abstract class ProductServices {
 
   @GET("/products")
   Future<List<Product>> getProducts();
+
+  @GET("/products/category/{category}")
+  Future<List<Product>> getProductsByCategory(
+      @Path("category") String category);
 }

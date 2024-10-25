@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/constant/sizes.dart';
 import 'package:shopping_app/features/product_details/screens/product_details_screen.dart';
 import 'package:shopping_app/features/products/data/model/products_model.dart';
@@ -11,10 +12,10 @@ class ProductGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 800,
+    return SizedBox(
+      height: 1000.h,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(top: 8.0),
         child: GridView.builder(
           itemCount: products.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

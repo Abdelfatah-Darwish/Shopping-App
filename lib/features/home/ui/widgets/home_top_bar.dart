@@ -33,11 +33,14 @@ class HomeTopBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushReplacementNamed(Routes.notificationScreen);
+              },
               icon: Image.asset(
                 "assets/images/notification.png",
                 width: 24.w,
                 height: 24.h,
+                color: ColorsManager.grey,
               ),
             ),
             IconButton(
@@ -46,6 +49,7 @@ class HomeTopBar extends StatelessWidget {
                 "assets/images/search_icon.png",
                 width: 24.w,
                 height: 24.h,
+                color: ColorsManager.grey,
               ),
             ),
           ],

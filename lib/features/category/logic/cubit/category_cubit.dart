@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 
 class CategoryCubit extends Cubit<int> {
-  int selectedIndex = 1;
-  CategoryCubit() : super(1);
+  int selectedIndex = 0;
+  CategoryCubit() : super(0);
 
   void updateIndex(int index) {
     selectedIndex = index;

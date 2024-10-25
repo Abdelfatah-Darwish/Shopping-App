@@ -10,5 +10,7 @@ class Routes {
   static const String AddProductVariantScreen = '/AddProductVariant';
   static const String cartScreen = '/cartScreen';
   static const String checkoutScreen = '/checkoutScreen';
-
+  static const String categoryScreen = '/categoryScreen';
+  static const String notificationScreen = '/notificationScreen';
+  static const String dark_light = '/dark_light';
 }
