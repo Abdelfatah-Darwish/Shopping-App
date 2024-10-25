@@ -17,10 +17,7 @@ class WishListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const NavBar(),
-      backgroundColor: ColorsManager.white,
       appBar: AppBar(
-        shadowColor: ColorsManager.white,
-        backgroundColor: ColorsManager.white,
         leading: IconButton(
           icon: Image.asset(
             "assets/images/next.png",

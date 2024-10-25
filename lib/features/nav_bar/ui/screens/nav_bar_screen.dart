@@ -34,7 +34,7 @@ class NavBar extends StatelessWidget {
                   break;
               }
             },
-            backgroundColor: ColorsManager.white,
+            // backgroundColor: ColorsManager.white,
             color: ColorsManager.black,
             activeColor: ColorsManager.pink,
             tabBackgroundColor: ColorsManager.lightPink,
@@ -50,7 +50,7 @@ class NavBar extends StatelessWidget {
                   height: 20.h,
                   color: selectedIndex == 0
                       ? ColorsManager.pink
-                      : ColorsManager.black,
+                      : ColorsManager.grey,
                 ),
                 text: 'Home',
               ),
@@ -62,7 +62,7 @@ class NavBar extends StatelessWidget {
                   height: 20.h,
                   color: selectedIndex == 1
                       ? ColorsManager.pink
-                      : ColorsManager.black,
+                      : ColorsManager.grey,
                 ),
                 text: 'Categories',
               ),
@@ -74,7 +74,7 @@ class NavBar extends StatelessWidget {
                   height: 20.h,
                   color: selectedIndex == 2
                       ? ColorsManager.pink
-                      : ColorsManager.black,
+                      : ColorsManager.grey,
                 ),
                 text: 'Cart',
               ),
@@ -86,7 +86,7 @@ class NavBar extends StatelessWidget {
                   height: 20.h,
                   color: selectedIndex == 3
                       ? ColorsManager.pink
-                      : ColorsManager.black,
+                      : ColorsManager.grey,
                 ),
                 text: 'Wishlist',
               ),
