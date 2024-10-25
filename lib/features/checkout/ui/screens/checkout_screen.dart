@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/local_database/sql_db.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
@@ -21,6 +22,22 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
+  Version sqlDb = Version();
+  List<Map> products = [];
+
+  Future<void> fetchProducts() async {
+    List<Map> response = await sqlDb.read('products');
+    setState(() {
+      products = response;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchProducts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +69,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ),
                 ),
                 verticalSpace(8),
-                const OrderItemsList(),
+                //get the data from the database
+                OrderItemsList(
+                  products: products,
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 23.w),
                   child: Column(
@@ -66,7 +86,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       verticalSpace(8),
                       const AddNewPayment(),
                       verticalSpace(24),
-                      Text(
+                      Text(   
                         'Payment',
                         style: TextStyles.font16BlackSemiBold,
                       ),
