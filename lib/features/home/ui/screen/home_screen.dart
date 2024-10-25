@@ -6,7 +6,7 @@ import 'package:shopping_app/features/home/ui/widgets/banner_Ads.dart';
 import 'package:shopping_app/features/home/ui/widgets/custom_search_bar.dart';
 import 'package:shopping_app/features/home/ui/widgets/home_top_bar.dart';
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
-import 'package:shopping_app/features/products/ui/screen/wishlist_screen.dart';
+import 'package:shopping_app/features/wishlist/ui/wishlist_screen.dart';
 import 'package:shopping_app/features/products/ui/widgets/product_widget.dart';
 
 class HomeScreen extends StatelessWidget {

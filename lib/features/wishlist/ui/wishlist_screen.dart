@@ -40,7 +40,7 @@ class WishListScreen extends StatelessWidget {
           verticalSpace(10),
           const BuildProductCategory(),
           verticalSpace(10),
-          const ProductScreen(),
+           const ProductScreen(),
         ],
       ),
     );
