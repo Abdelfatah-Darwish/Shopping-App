@@ -7,7 +7,9 @@ import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/category/ui/widgets/build_product_category.dart';
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
+import 'package:shopping_app/features/products/ui/widgets/grid_for_product.dart';
 import 'package:shopping_app/features/products/ui/widgets/product_widget.dart';
+import 'package:shopping_app/features/wishlist/ui/widgets/grid_for_product.dart';
 
 class WishListScreen extends StatelessWidget {
   const WishListScreen({super.key});
@@ -35,13 +37,15 @@ class WishListScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          verticalSpace(10),
-          const BuildProductCategory(),
-          verticalSpace(10),
-           const ProductScreen(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            verticalSpace(10),
+            const BuildProductCategory(),
+            verticalSpace(10),
+            const GridForProduct(),
+          ],
+        ),
       ),
     );
   }
