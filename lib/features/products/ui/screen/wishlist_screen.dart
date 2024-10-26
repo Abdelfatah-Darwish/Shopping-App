@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
@@ -6,8 +7,8 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/category/ui/widgets/build_product_category.dart';
+import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
-import 'package:shopping_app/features/products/ui/widgets/product_widget.dart';
 
 class WishListScreen extends StatelessWidget {
   const WishListScreen({super.key});
@@ -16,9 +17,7 @@ class WishListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const NavBar(),
-      backgroundColor: ColorsManager.white,
       appBar: AppBar(
-        backgroundColor: ColorsManager.white,
         leading: IconButton(
           icon: Image.asset(
             "assets/images/next.png",
@@ -27,11 +26,12 @@ class WishListScreen extends StatelessWidget {
           ),
           onPressed: () {
             context.pushReplacementNamed(Routes.homeScreen);
+            context.read<NavBarCubit>().updateIndex(0); // Reset to Home tab
           },
         ),
         title: Text(
           "WishList",
-          style: TextStyles.font15BlackSemiBold,
+          style: TextStyles.font18blackSemiBold,
         ),
         centerTitle: true,
       ),
@@ -40,7 +40,7 @@ class WishListScreen extends StatelessWidget {
           verticalSpace(10),
           const BuildProductCategory(),
           verticalSpace(10),
-          const ProductScreen(),
+          // const ProductScreen(),
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:shopping_app/features/products/data/model/products_model.dart';
 
 class ImageProductsCard extends StatefulWidget {
   final Product product;
+
   const ImageProductsCard({super.key, required this.product});
 
   @override
@@ -11,17 +12,6 @@ class ImageProductsCard extends StatefulWidget {
 }
 
 class _ImageProductsCardState extends State<ImageProductsCard> {
-  // List to track whether each item is selected
-  late List<bool> isSelected;
-  //late int index;
-
-  @override
-  void initState() {
-    super.initState();
-    // Initialize the isSelected list with false for each item
-    isSelected = List<bool>.filled(widget.product.image.length, false);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -52,17 +42,9 @@ class _ImageProductsCardState extends State<ImageProductsCard> {
           bottom: 4,
           right: 8,
           child: CircleAvatar(
-            backgroundColor: isSelected[widget.product.id]
-                ? ColorsManager.pink
-                : ColorsManager.white,
+            backgroundColor: ColorsManager.white,
             child: IconButton(
-              onPressed: () {
-                setState(() {
-                  // Toggle selection state
-                  isSelected[widget.product.id] =
-                      !isSelected[widget.product.id];
-                });
-              },
+              onPressed: () {},
               icon: const Icon(Icons.add_shopping_cart),
             ),
           ),

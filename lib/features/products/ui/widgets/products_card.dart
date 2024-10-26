@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: ColorsManager.white,
+      // color: ColorsManager.white,
       elevation: 3,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -39,27 +39,26 @@ class ProductCard extends StatelessWidget {
                         style: TextStyles.font12lightGreyRegular,
                       ),
                       //  maybe romev it and but after price
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              const Icon(Icons.star,
-                                  color: Colors.amber, size: 12),
-                              Text(
-                                product.rating.rate.toString(),
-                                style: const TextStyle(fontSize: 12),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
                 verticalSpace(4),
-                Text('\$${product.price}',
-                    style: TextStyles.font13blackRegular),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('\$${product.price}',
+                        style: TextStyles.font13blackRegular),
+                    Row(
+                      children: [
+                        const Icon(Icons.star, color: Colors.amber, size: 12),
+                        Text(
+                          product.rating.rate.toString(),
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

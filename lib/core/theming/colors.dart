@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorsManager {
   static const Color pink = Color.fromRGBO(255, 23, 104, 1);
-  static const Color black = Color(0xFF000000);
+  static const Color black = Color.fromRGBO(0, 0, 0, 1);
   static const Color green = Color.fromRGBO(47, 134, 85, 0.059);
   static const Color red = Color.fromRGBO(221, 34, 34, 0.059);
   static const Color grey = Color.fromARGB(247, 85, 85, 85);
@@ -13,8 +13,3 @@ class ColorsManager {
   static const Color blue = Color.fromRGBO(66, 133, 244, 1);
   static const Color darkerGrey = Color.fromRGBO(73, 70, 70, 1);
 }
-
-//   static const Color pink = Color(0x0fff1768);
-//   static const Color black = Color(0x0f000000);
-//   static const Color green = Color(0x0f2f8655);
-//   static const Color red = Color(0x0fdd222
