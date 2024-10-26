@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
-import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 
 class OrderItemsList extends StatelessWidget {
   final List<Map> products;

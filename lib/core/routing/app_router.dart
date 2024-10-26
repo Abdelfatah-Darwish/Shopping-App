@@ -8,7 +8,6 @@ import 'package:shopping_app/features/checkout/ui/screens/checkout_done_screen.d
 import 'package:shopping_app/features/checkout/ui/screens/checkout_screen.dart';
 import 'package:shopping_app/features/home/ui/screen/home_screen.dart';
 import 'package:shopping_app/features/login/ui/login_screen.dart';
-import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
 import 'package:shopping_app/features/profile/ui/screen/profile_screen.dart';
 import 'package:shopping_app/features/sign_up/ui/sign_up_screen.dart';
 

@@ -1,11 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping_app/core/DI/dependency_injection.dart';
-import 'package:shopping_app/core/networking/api/product_services.dart';
 
 import 'package:shopping_app/core/theming/colors.dart';
-import 'package:shopping_app/features/products/data/repositories/products_repo.dart';
 
 import 'package:shopping_app/features/products/logic/cubit/products_cubit.dart';
 import 'package:shopping_app/features/products/logic/cubit/products_state.dart';

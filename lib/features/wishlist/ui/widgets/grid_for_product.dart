@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_app/core/constant/sizes.dart';
 import 'package:shopping_app/core/local_database/sql_db.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
