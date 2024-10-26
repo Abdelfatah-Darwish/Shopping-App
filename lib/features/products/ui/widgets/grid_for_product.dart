@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/constant/sizes.dart';
 import 'package:shopping_app/features/product_details/screens/product_details_screen.dart';
-import 'package:shopping_app/features/products/data/model/products_model.dart';
+import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 import 'package:shopping_app/features/products/ui/widgets/products_card.dart';
 
 class ProductGrid extends StatelessWidget {

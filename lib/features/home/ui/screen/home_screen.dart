@@ -10,7 +10,6 @@ import 'package:shopping_app/features/home/ui/widgets/custom_search_bar.dart';
 import 'package:shopping_app/features/home/ui/widgets/home_top_bar.dart';
 
 import 'package:shopping_app/features/nav_bar/ui/screens/nav_bar_screen.dart';
-import 'package:shopping_app/features/products/data/model/products_model.dart';
 import 'package:shopping_app/features/products/ui/widgets/product_widget.dart';
 
 class HomeScreen extends StatelessWidget {

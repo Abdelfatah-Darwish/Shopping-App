@@ -5,8 +5,8 @@ import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/features/product_details/widgets/color_of_product.dart';
 import 'package:shopping_app/features/product_details/widgets/display_image_of_product.dart';
 import 'package:shopping_app/features/product_details/widgets/display_info_of_product.dart';
-import 'package:shopping_app/features/products/data/model/products_model.dart';
 import 'package:shopping_app/features/products/ui/widgets/product_widget.dart';
+import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;

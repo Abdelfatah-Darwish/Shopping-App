@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
-import 'package:shopping_app/features/products/data/model/products_model.dart';
+import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 
 class DisplayImageOfProduct extends StatelessWidget {
   final Product product;
@@ -13,7 +13,7 @@ class DisplayImageOfProduct extends StatelessWidget {
     return Stack(
       children: [
         Image.network(
-          product.image,
+          product.image!,
           width: 450.w,
           height: 450.h,
           fit: BoxFit.cover,

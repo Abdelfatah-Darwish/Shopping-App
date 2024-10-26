@@ -13,4 +13,5 @@ class Routes {
   static const String categoryScreen = '/categoryScreen';
   static const String notificationScreen = '/notificationScreen';
   static const String dark_light = '/dark_light';
+  static const String checkoutDoneScreen = '/checkoutDoneScreen';
 }

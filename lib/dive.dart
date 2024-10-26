@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,9 +10,22 @@ import 'package:shopping_app/features/dark_light/data/models/enums/theme_state.d
 import 'package:shopping_app/features/dark_light/logic/cubit/app_theme_cubit.dart';
 import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
 
-class Dive extends StatelessWidget {
+class Dive extends StatefulWidget {
   final AppRouter appRouter;
   const Dive({super.key, required this.appRouter});
+
+  @override
+  State<Dive> createState() => _DiveState();
+}
+
+class _DiveState extends State<Dive> {
+  User? user;
+
+  @override
+  void initState() {
+    super.initState();
+    user = FirebaseAuth.instance.currentUser;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +48,11 @@ class Dive extends StatelessWidget {
                           bodyMedium: TextStyle(color: ColorsManager.lightGrey),
                         ),
                       ),
-                      debugShowCheckedModeBanner: false,
-                      initialRoute: Routes.homeScreen,
-                      onGenerateRoute: appRouter.generateRoute,
-                    ));
+          debugShowCheckedModeBanner: false,
+          initialRoute:
+              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
+          onGenerateRoute: widget.appRouter.generateRoute,
+        ));
               } else if (state is AppThemeDark) {
                 return BlocProvider(
                     create: (_) => NavBarCubit(),
@@ -50,10 +65,11 @@ class Dive extends StatelessWidget {
                           bodyMedium: TextStyle(color: ColorsManager.lightGrey),
                         ),
                       ),
-                      debugShowCheckedModeBanner: false,
-                      initialRoute: Routes.homeScreen,
-                      onGenerateRoute: appRouter.generateRoute,
-                    ));
+          debugShowCheckedModeBanner: false,
+          initialRoute:
+              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
+          onGenerateRoute: widget.appRouter.generateRoute,
+        ));
               }
               return BlocProvider(
                   create: (_) => NavBarCubit(),
@@ -63,12 +79,14 @@ class Dive extends StatelessWidget {
                       primaryColor: const Color.fromRGBO(255, 23, 104, 1),
                       scaffoldBackgroundColor: const Color(0xFFFCFCFC),
                     ),
-                    debugShowCheckedModeBanner: false,
-                    initialRoute: Routes.homeScreen,
-                    onGenerateRoute: appRouter.generateRoute,
-                  ));
+          debugShowCheckedModeBanner: false,
+          initialRoute:
+              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
+          onGenerateRoute: widget.appRouter.generateRoute,
+        ));
             },
           ),
+        
         ));
   }
 }

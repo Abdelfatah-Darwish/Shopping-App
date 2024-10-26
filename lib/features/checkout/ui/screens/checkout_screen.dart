@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/local_database/sql_db.dart';
+import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
@@ -20,6 +23,22 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
+  Version sqlDb = Version();
+  List<Map> products = [];
+
+  Future<void> fetchProducts() async {
+    List<Map> response = await sqlDb.read('products');
+    setState(() {
+      products = response;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchProducts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +71,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ),
                 ),
                 verticalSpace(8),
-                const OrderItemsList(),
+                //get the data from the database
+                OrderItemsList(
+                  products: products,
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 23.w),
                   child: Column(
@@ -79,7 +101,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         buttonHeight: 48,
                         buttonText: 'place order',
                         textStyle: TextStyles.font20WhiteSemiBold,
-                        onPressed: () {},
+                        onPressed: () async {
+                          await sqlDb.clearProductsTable();
+                          context
+                              .pushReplacementNamed(Routes.checkoutDoneScreen);
+                        },
                       ),
                     ],
                   ),

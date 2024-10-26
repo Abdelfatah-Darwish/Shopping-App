@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Profial",
+            "Profile",
             style: TextStyles.font20BlackSemiBold.copyWith(color: Colors.black),
           ),
           leading: IconButton(
