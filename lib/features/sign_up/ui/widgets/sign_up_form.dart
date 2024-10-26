@@ -1,11 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_app/core/theming/text_styles.dart';
+import 'package:shopping_app/core/widgets/text_form_field.dart';
 import 'package:shopping_app/delete_this_after_merge/sign_up_widgets/password_validation.dart';
-import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
+
 import 'package:shopping_app/core/helpers/app_regex.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
+import 'package:shopping_app/features/sign_up/ui/widgets/password_validation.dart';
 
 class SignUpForm extends StatefulWidget {
   final TextEditingController emailController;
@@ -69,7 +71,7 @@ class _SignUpFormState extends State<SignUpForm> {
             vertical: 18.h,
           ),
           hintText: 'E-mail',
-          inputTextStyle: TextStyles.font18BlackRegular,
+          inputTextStyle: TextStyles.font18BlackRegular(context),
           validator: (value) {
             if (value == null ||
                 value.isEmpty ||
@@ -87,6 +89,7 @@ class _SignUpFormState extends State<SignUpForm> {
             vertical: 18.h,
           ),
           hintText: 'Password',
+          maxline: 1,
           validator: (value) {
             if (value == null || value.isEmpty) {
               return 'Please enter a valid password';
@@ -112,6 +115,7 @@ class _SignUpFormState extends State<SignUpForm> {
             horizontal: 20.w,
             vertical: 18.h,
           ),
+          maxline: 1,
           hintText: 'Confirm password',
           validator: (value) {
             if (value == null ||

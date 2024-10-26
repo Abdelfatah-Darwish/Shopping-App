@@ -4,21 +4,68 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/font_weight_helper.dart';
 
 class TextStyles {
-  static TextStyle font24BlackRegular = TextStyle(
-    fontSize: 24.sp,
+  static Color getTextColor(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    return isDarkMode ? Colors.grey : Colors.black;
+  }
+
+  static Color getsTextColor(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    return isDarkMode ? Colors.grey : Colors.black;
+  }
+
+  static TextStyle font24BlackRegular(BuildContext context) {
+    return TextStyle(
+      fontSize: 24.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: getTextColor(context),
+    );
+  }
+
+  static TextStyle font16BlackRegular(BuildContext context) {
+    return TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: getTextColor(context),
+    );
+  }
+
+  static TextStyle font20BlackSemiBold(BuildContext context) {
+    return TextStyle(
+      fontSize: 20.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: getTextColor(context),
+    );
+  }
+
+  static TextStyle font18BlackRegular(BuildContext context) {
+    return TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: getTextColor(context),
+    );
+  }
+
+  static TextStyle font18WhiteRegular = TextStyle(
+    fontSize: 18.sp,
     fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.black,
+    color: ColorsManager.white,
   );
+
+  static TextStyle font16BlackSemiBold(BuildContext context) {
+    return TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: getTextColor(context),
+    );
+  }
+
   static TextStyle font18lightGreyRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.lightGrey,
   );
-  static TextStyle font16BlackRegular = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.black,
-  );
+
   static TextStyle font16lightGreyRegular = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.regular,
@@ -89,32 +136,17 @@ class TextStyles {
       color: ColorsManager.pink,
       letterSpacing: 0.25.sp);
 
-  static TextStyle font18WhiteRegular = TextStyle(
-    fontSize: 18.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.white,
-    //
-  );
-  static TextStyle font18BlackRegular = TextStyle(
-    fontSize: 18.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.black,
-  );
+  // static TextStyle font18BlackRegular = TextStyle(
+  //   fontSize: 18.sp,
+  //   fontWeight: FontWeightHelper.regular,
+  //   color: ColorsManager.black,
+  // );
   static TextStyle font20WhiteSemiBold = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.white,
   );
-  static TextStyle font20BlackSemiBold = TextStyle(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
-  );
-  static TextStyle font16BlackSemiBold = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: Colors.black,
-  );
+
   static TextStyle font15BlackSemiBold = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeightHelper.bold,

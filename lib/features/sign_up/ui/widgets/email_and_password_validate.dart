@@ -76,10 +76,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           PasswordValidation(
             hasLowerCase: hasLowerCase,
             hasUpperCase: hasUpperCase,
-            hasSpecialCharacters: hasSpecialCharacters,
+            // hasSpecialCharacters: hasSpecialCharacters,
             hasNumber: hasNumber,
             hasMinLength: hasMinLength,
-            isObscureText: isObscureText,
+            // isObscureText: isObscureText,
           ),
         ],
       ),

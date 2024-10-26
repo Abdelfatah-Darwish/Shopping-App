@@ -22,7 +22,7 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
       children: [
         Text(
           'Address',
-          style: TextStyles.font16BlackSemiBold
+          style: TextStyles.font16BlackSemiBold(context)
               .copyWith(color: ColorsManager.black),
         ),
         verticalSpace(6),

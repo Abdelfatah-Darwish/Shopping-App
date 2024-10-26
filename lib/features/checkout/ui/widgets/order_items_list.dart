@@ -43,7 +43,7 @@ class OrderItemsList extends StatelessWidget {
                   // Display the price text
                   Text(
                     products[index]["price"]!,
-                    style: TextStyles.font16BlackSemiBold,
+                    style: TextStyles.font16BlackSemiBold(context),
                   ),
                 ],
               ),

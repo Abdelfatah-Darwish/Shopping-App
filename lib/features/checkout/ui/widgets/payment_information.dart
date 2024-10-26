@@ -4,7 +4,6 @@ import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/theming/text_styles.dart';
 
 class PaymentInformation extends StatefulWidget {
-  
   const PaymentInformation({super.key});
 
   @override
@@ -74,7 +73,7 @@ class _PaymentInformationState extends State<PaymentInformation> {
             ),
             Text(
               '${discountedTotal.toStringAsFixed(2)} L.E',
-              style: TextStyles.font16BlackRegular,
+              style: TextStyles.font16BlackRegular(context),
             ),
           ],
         ),

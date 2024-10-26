@@ -30,7 +30,7 @@ class AddProductScreen extends StatelessWidget {
               )),
           title: Text(
             'Add Product',
-            style: TextStyles.font20BlackSemiBold,
+            style: TextStyles.font20BlackSemiBold(context),
           ),
           centerTitle: true,
         ),

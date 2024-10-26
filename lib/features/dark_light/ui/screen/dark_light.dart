@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/widgets/text_button.dart';
-import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
+
 import 'package:shopping_app/features/dark_light/data/models/enums/theme_state.dart';
 import 'package:shopping_app/features/dark_light/logic/cubit/app_theme_cubit.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -33,7 +33,7 @@ class _DarkLightState extends State<DarkLight> {
             )),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 100.0),
+        padding: const EdgeInsets.only(top: 20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

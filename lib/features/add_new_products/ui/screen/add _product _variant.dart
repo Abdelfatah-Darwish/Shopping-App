@@ -27,7 +27,7 @@ class AddProductVariant extends StatelessWidget {
               )),
           title: Text(
             'Add Product',
-            style: TextStyles.font20BlackSemiBold,
+            style: TextStyles.font20BlackSemiBold(context),
           ),
           centerTitle: true,
         ),
@@ -41,7 +41,7 @@ class AddProductVariant extends StatelessWidget {
                   children: [
                     Text(
                       "Product Image",
-                      style: TextStyles.font20BlackSemiBold,
+                      style: TextStyles.font20BlackSemiBold(context),
                     )
                   ],
                 ),

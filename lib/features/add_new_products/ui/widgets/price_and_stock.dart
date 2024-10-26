@@ -20,7 +20,7 @@ class PricingAndStock extends StatelessWidget {
           children: [
             Text(
               "Pricing&Stock",
-              style: TextStyles.font20BlackSemiBold,
+              style: TextStyles.font20BlackSemiBold(context),
             ),
           ],
         ),
@@ -30,7 +30,7 @@ class PricingAndStock extends StatelessWidget {
           children: [
             Text(
               'Price',
-              style: TextStyles.font16BlackSemiBold,
+              style: TextStyles.font16BlackSemiBold(context),
             ),
           ],
         ),
@@ -55,7 +55,7 @@ class PricingAndStock extends StatelessWidget {
           children: [
             Text(
               'Stock',
-              style: TextStyles.font16BlackSemiBold,
+              style: TextStyles.font16BlackSemiBold(context),
             ),
           ],
         ),

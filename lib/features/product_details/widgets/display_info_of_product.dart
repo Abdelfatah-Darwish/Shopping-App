@@ -16,7 +16,7 @@ class DisplayInfoOfProduct extends StatelessWidget {
       children: [
         Text(
           product.title!,
-          style: TextStyles.font20BlackSemiBold,
+          style: TextStyles.font20BlackSemiBold(context),
         ),
         verticalSpace(10),
         Row(

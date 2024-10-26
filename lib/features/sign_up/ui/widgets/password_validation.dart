@@ -6,19 +6,19 @@ import 'package:shopping_app/core/widgets/spacing.dart';
 import '../../../../core/theming/text_styles.dart';
 
 class PasswordValidation extends StatelessWidget {
-  final bool isObscureText;
+  // final bool isObscureText;
   final bool hasLowerCase;
   final bool hasUpperCase;
-  final bool hasSpecialCharacters;
+  // final bool hasSpecialCharacters;
   final bool hasNumber;
   final bool hasMinLength;
 
   const PasswordValidation(
       {super.key,
-      required this.isObscureText,
+      // required this.isObscureText,
       required this.hasLowerCase,
       required this.hasUpperCase,
-      required this.hasSpecialCharacters,
+      // required this.hasSpecialCharacters,
       required this.hasNumber,
       required this.hasMinLength});
 
@@ -48,8 +48,8 @@ class PasswordValidation extends StatelessWidget {
         verticalSpace(2),
         buildValidationRow('At least 1 uppercase letter', hasUpperCase),
         verticalSpace(2),
-        buildValidationRow(
-            'At least 1 special character', hasSpecialCharacters),
+        // buildValidationRow(
+        //     'At least 1 special character', hasSpecialCharacters),
         verticalSpace(2),
         buildValidationRow('At least 1 number', hasNumber),
         verticalSpace(2),

@@ -9,6 +9,7 @@ class NavBarProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      // color: ColorsManager.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

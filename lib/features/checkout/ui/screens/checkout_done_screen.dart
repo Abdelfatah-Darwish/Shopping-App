@@ -29,7 +29,7 @@ class _CheckoutDoneScreenState extends State<CheckoutDoneScreen> {
         title: Center(
           child: Text(
             'Checkout Done',
-            style: TextStyles.font20BlackSemiBold,
+            style: TextStyles.font20BlackSemiBold(context),
           ),
         ),
       ),

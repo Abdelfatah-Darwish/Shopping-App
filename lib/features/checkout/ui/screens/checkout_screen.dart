@@ -67,7 +67,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   padding: const EdgeInsets.only(left: 23),
                   child: Text(
                     'Order items',
-                    style: TextStyles.font16BlackSemiBold,
+                    style: TextStyles.font16BlackSemiBold(context),
                   ),
                 ),
                 verticalSpace(8),
@@ -82,7 +82,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     children: [
                       Text(
                         'Pay with',
-                        style: TextStyles.font16BlackSemiBold,
+                        style: TextStyles.font16BlackSemiBold(context),
                       ),
                       const PaymentOptions(),
                       verticalSpace(8),
@@ -90,7 +90,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       verticalSpace(24),
                       Text(
                         'Payment',
-                        style: TextStyles.font16BlackSemiBold,
+                        style: TextStyles.font16BlackSemiBold(context),
                       ),
                       verticalSpace(6),
                       const PaymentInformation(),
