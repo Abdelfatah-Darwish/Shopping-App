@@ -13,7 +13,7 @@ class DontHaveAccountText extends StatelessWidget {
         children: [
           TextSpan(
             text: 'Don\'t have an account?',
-            style: TextStyles.font18BlackRegular,
+            style: TextStyles.font18BlackRegular(context),
           ),
           TextSpan(
             text: ' Sign Up',

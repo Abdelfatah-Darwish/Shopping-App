@@ -39,7 +39,7 @@ class NotificationScreen extends StatelessWidget {
             Center(
                 child: Text(
               " Not Notification Yet",
-              style: TextStyles.font18BlackRegular,
+              style: TextStyles.font18BlackRegular(context),
             )),
             verticalSpace(10),
             Center(

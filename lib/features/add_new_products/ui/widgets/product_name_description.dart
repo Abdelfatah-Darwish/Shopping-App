@@ -17,7 +17,7 @@ class ProductNameAndDescription extends StatelessWidget {
           children: [
             Text(
               'Product name',
-              style: TextStyles.font16BlackSemiBold,
+              style: TextStyles.font16BlackSemiBold(context),
             ),
           ],
         ),
@@ -42,7 +42,7 @@ class ProductNameAndDescription extends StatelessWidget {
           children: [
             Text(
               'Product description',
-              style: TextStyles.font16BlackSemiBold,
+              style: TextStyles.font16BlackSemiBold(context),
             ),
           ],
         ),

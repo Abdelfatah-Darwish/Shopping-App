@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/routing/app_router.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
-import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
+
 import 'package:shopping_app/features/dark_light/data/models/enums/theme_state.dart';
 import 'package:shopping_app/features/dark_light/logic/cubit/app_theme_cubit.dart';
 import 'package:shopping_app/features/nav_bar/logic/nav_bar_cubit.dart';
@@ -43,10 +43,7 @@ class _DiveState extends State<Dive> {
                       title: 'Dive App',
                       theme: ThemeData.light().copyWith(
                         scaffoldBackgroundColor: ColorsManager.white,
-                        textTheme: const TextTheme(
-                          bodyLarge: TextStyle(color: ColorsManager.black),
-                          bodyMedium: TextStyle(color: ColorsManager.lightGrey),
-                        ),
+                        cardColor: ColorsManager.white,
                       ),
                       debugShowCheckedModeBanner: false,
                       initialRoute: user == null
@@ -60,10 +57,12 @@ class _DiveState extends State<Dive> {
                     child: MaterialApp(
                       title: 'Dive App',
                       theme: ThemeData.dark().copyWith(
+                        brightness: Brightness.dark,
                         scaffoldBackgroundColor: ColorsManager.black,
                         cardColor: Colors.grey,
                         hintColor: Colors.grey,
                         hoverColor: Colors.grey,
+                        secondaryHeaderColor: Colors.grey,
                         textTheme: const TextTheme(
                           bodyLarge: TextStyle(color: Colors.white),
                           bodyMedium: TextStyle(color: ColorsManager.lightGrey),

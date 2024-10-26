@@ -22,7 +22,7 @@ class ProductSize extends StatelessWidget {
           children: [
             Text(
               'Size',
-              style: TextStyles.font16BlackSemiBold,
+              style: TextStyles.font16BlackSemiBold(context),
             ),
           ],
         ),

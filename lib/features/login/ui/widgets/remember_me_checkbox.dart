@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/delete_this_after_merge/theming/colors.dart';
-import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 
 class RememberMeCheckbox extends StatefulWidget {
   const RememberMeCheckbox({super.key});

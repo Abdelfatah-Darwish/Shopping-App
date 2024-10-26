@@ -23,7 +23,7 @@ class ColorOfProduct extends StatelessWidget {
           children: [
             Text(
               'Color',
-              style: TextStyles.font16BlackSemiBold,
+              style: TextStyles.font16BlackSemiBold(context),
             ),
           ],
         ),

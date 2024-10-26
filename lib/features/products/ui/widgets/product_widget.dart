@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopping_app/core/DI/dependency_injection.dart';
 
 import 'package:shopping_app/core/theming/colors.dart';
@@ -40,10 +41,9 @@ class ProductScreen extends StatelessWidget {
         child: BlocBuilder<ProductCubit, ProductState>(
           builder: (context, state) {
             if (state is ProductLoading) {
-              return const Center(
-                  child: CircularProgressIndicator(
-                color: ColorsManager.pink,
-              ));
+              return Center(
+                child: Lottie.asset('assets/svg/loading.json'),
+              );
             } else if (state is ProductLoaded) {
               return ProductGrid(products: state.products);
             } else if (state is ProductError) {

@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
 import 'package:shopping_app/core/routing/routes.dart';
+import 'package:shopping_app/core/theming/text_styles.dart';
 import 'package:shopping_app/core/widgets/error_dialog.dart';
+import 'package:shopping_app/core/widgets/text_form_field.dart';
 import 'package:shopping_app/delete_this_after_merge/login_widgets/dont_have_account.dart';
-import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
+
 import 'package:shopping_app/delete_this_after_merge/widgets/spacing.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_button.dart';
 import 'package:shopping_app/delete_this_after_merge/widgets/text_form_field.dart';
 import 'package:shopping_app/core/networking/auth/auth_service.dart';
+import 'package:shopping_app/features/login/ui/widgets/dont_have_account.dart';
 import 'package:shopping_app/features/login/ui/widgets/remember_me_checkbox.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -39,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Text(
                   'Welcome back',
-                  style: TextStyles.font24BlackRegular
+                  style: TextStyles.font24BlackRegular(context)
                       .copyWith(color: const Color(0xFF000000)),
                 ),
                 verticalSpace(16),
@@ -60,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           vertical: 18.h,
                         ),
                         hintText: 'E-mail / phone number',
-                        inputTextStyle: TextStyles.font18BlackRegular,
+                        inputTextStyle: TextStyles.font18BlackRegular(context),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter a valid email';

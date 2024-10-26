@@ -14,7 +14,7 @@ class AddNewPayment extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: '+', // Default text
-          style: TextStyles.font16BlackRegular, // Default style
+          style: TextStyles.font16BlackRegular(context), // Default style
           children: <TextSpan>[
             TextSpan(
               text: ' Add new payment method',

@@ -25,7 +25,7 @@ class CheckoutAppBar extends StatelessWidget {
         horizontalSpace(80),
         Text(
           "Checkout",
-          style: TextStyles.font20BlackSemiBold
+          style: TextStyles.font20BlackSemiBold(context)
               .copyWith(color: const Color(0xFF000000)),
         ),
       ],
