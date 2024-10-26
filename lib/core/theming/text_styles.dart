@@ -108,17 +108,17 @@ class TextStyles {
   static TextStyle font20BlackSemiBold = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.bold,
-    color: ColorsManager.black,
+    color: Colors.black,
   );
   static TextStyle font16BlackSemiBold = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: ColorsManager.black,
+    color: Colors.black,
   );
   static TextStyle font15BlackSemiBold = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeightHelper.bold,
-    color: ColorsManager.black,
+    color: Colors.black,
   );
   //
   static TextStyle font13blackSemiBold = TextStyle(
@@ -129,7 +129,7 @@ class TextStyles {
   static TextStyle font18blackSemiBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: ColorsManager.black,
+    color: Colors.black,
   );
   static TextStyle font20PinkRegular = TextStyle(
     fontSize: 20.sp,
@@ -144,7 +144,7 @@ class TextStyles {
   static TextStyle font13blackRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.black,
+    color: Colors.black,
   );
   static TextStyle font18PinkBold = TextStyle(
     fontSize: 18.sp,
