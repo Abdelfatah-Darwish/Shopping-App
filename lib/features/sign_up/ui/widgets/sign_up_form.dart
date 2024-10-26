@@ -36,7 +36,6 @@ class _SignUpFormState extends State<SignUpForm> {
 
   bool hasLowercase = false;
   bool hasUppercase = false;
-  bool hasSpecialCharacters = false;
 
   bool hasNumber = false;
   bool hasMinLength = false;
@@ -90,6 +89,7 @@ class _SignUpFormState extends State<SignUpForm> {
             vertical: 18.h,
           ),
           hintText: 'Password',
+          maxline: 1,
           validator: (value) {
             if (value == null || value.isEmpty) {
               return 'Please enter a valid password';
@@ -115,6 +115,7 @@ class _SignUpFormState extends State<SignUpForm> {
             horizontal: 20.w,
             vertical: 18.h,
           ),
+          maxline: 1,
           hintText: 'Confirm password',
           validator: (value) {
             if (value == null ||
@@ -145,8 +146,6 @@ class _SignUpFormState extends State<SignUpForm> {
           hasUpperCase: hasUppercase,
           hasNumber: hasNumber,
           hasMinLength: hasMinLength,
-          isObscureText: true,
-          hasSpecialCharacters: hasSpecialCharacters,
         ),
       ],
     );

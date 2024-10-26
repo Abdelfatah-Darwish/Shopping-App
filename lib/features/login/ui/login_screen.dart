@@ -74,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       verticalSpace(19),
                       AppTextFormField(
                         controller: _passwordController,
+                        maxline: 1,
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 20.w,
                           vertical: 18.h,

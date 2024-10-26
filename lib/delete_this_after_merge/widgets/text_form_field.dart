@@ -1,7 +1,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:shopping_app/core/theming/text_styles.dart';
 // import 'package:shopping_app/delete_this_after_merge/theming/colors.dart';
-// import 'package:shopping_app/delete_this_after_merge/theming/text_styles.dart';
 
 // class AppTextFormField extends StatelessWidget {
 //   final EdgeInsetsGeometry? contentPadding;
@@ -71,7 +71,7 @@
 //         suffixIcon: suffixIcon,
 //       ),
 //       obscureText: isObscureText ?? false,
-//       style: TextStyles.font18BlackRegular
+//       style: TextStyles.font18BlackRegular(context)
 //           .copyWith(color: const Color(0xFF000000)),
 //       validator: validator,
 //     );
