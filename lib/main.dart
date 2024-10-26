@@ -25,8 +25,4 @@ void main() async {
   runApp(Dive(
     appRouter: AppRouter(),
   ));
-}
-// BlocProvider(
-      // create: (_) => NavBarCubit(),
-      // child: 
-      //
+}       

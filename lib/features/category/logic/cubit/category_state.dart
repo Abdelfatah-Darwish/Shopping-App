@@ -1,4 +1,4 @@
-import 'package:shopping_app/features/products/data/model/products_model.dart';
+import 'package:shopping_app/features/products/data/model/model_from_extension/product_model/product.dart';
 
 abstract class CategoryState {}
 
