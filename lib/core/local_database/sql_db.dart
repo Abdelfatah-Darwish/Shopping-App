@@ -47,14 +47,14 @@ class Version {
   )
  ''');
 
-//     batch.execute('''
-//   CREATE TABLE "students" (
-//     "id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT,
-//     "firstName" TEXT NOT NULL,
-//     "lastNme" TEXT NOT NULL,
-//     "address" TEXT NOT NULL
-//   )
-//  ''');
+    batch.execute('''
+  CREATE TABLE "favorites" (
+    "id" INTEGER  NOT NULL,
+    "title" TEXT NOT NULL,
+    "price" TEXT NOT NULL,
+    "image" TEXT NOT NULL
+  )
+ ''');
 
     await batch.commit();
 

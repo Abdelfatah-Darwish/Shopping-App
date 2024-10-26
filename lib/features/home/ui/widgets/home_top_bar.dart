@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_app/core/helpers/extensions.dart';
+import 'package:shopping_app/core/local_database/sql_db.dart';
 import 'package:shopping_app/core/routing/routes.dart';
 import 'package:shopping_app/core/theming/colors.dart';
 import 'package:shopping_app/core/widgets/spacing.dart';
@@ -11,6 +12,7 @@ class HomeTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Version sqlDb = Version();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -34,7 +36,9 @@ class HomeTopBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () async {
+                await sqlDb.deleteAllDatabase();
+              },
               icon: Image.asset(
                 "assets/images/notification.png",
                 width: 24.w,

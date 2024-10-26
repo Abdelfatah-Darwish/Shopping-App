@@ -21,7 +21,7 @@ class _GridForProductState extends State<GridForProduct> {
   List<Map> products = [];
 
   Future<void> fetchProducts() async {
-    List<Map> response = await sqlDb.read('products');
+    List<Map> response = await sqlDb.read('favorites');
     setState(() {
       products = response;
     });
@@ -85,10 +85,16 @@ class _GridForProductState extends State<GridForProduct> {
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
                               child: IconButton(
-                                onPressed: () {
-                                  // Toggle favorite logic here
+                                onPressed: () async {
+                                  int productId = products[index]['id'];
+                                  await sqlDb.delete(
+                                      'favorites', 'id=$productId');
+                                  fetchProducts();
                                 },
-                                icon: const Icon(Icons.favorite),
+                                icon: const Icon(
+                                  Icons.favorite,
+                                  color: Colors.red,
+                                ),
                               ),
                             ),
                           ),

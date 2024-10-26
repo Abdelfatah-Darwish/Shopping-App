@@ -41,10 +41,35 @@ class ImageProductsCard extends StatelessWidget {
                   return CircleAvatar(
                     backgroundColor: Colors.white,
                     child: IconButton(
-                      onPressed: () {
+                      onPressed: () async {
                         context
                             .read<FavoriteCubit>()
                             .toggleFavorite(product.id!);
+
+                        List<Map> existingProduct = await sqlDb.readSpecific(
+                          'favorites',
+                          where: 'id = ?',
+                          whereArgs: [product.id],
+                        );
+
+                        if (existingProduct.isNotEmpty) {
+                          print("Product is already in the cart.");
+                          // context.pushReplacementNamed(Routes.wishlistScreen);
+                        } else {
+                          int response = await sqlDb.insert(
+                            'favorites',
+                            {
+                              'id': product.id,
+                              'title': product.title,
+                              'price': product.price,
+                              'image': product.image,
+                            },
+                          );
+                          if (response > 0) {
+                            print(
+                                "Product added to the favorites table and added to Wishlist screen-----------------------------");
+                          }
+                        }
                       },
                       icon: Icon(
                         isFavorite ? Icons.favorite : Icons.favorite_border,
