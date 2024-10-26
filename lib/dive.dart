@@ -48,11 +48,12 @@ class _DiveState extends State<Dive> {
                           bodyMedium: TextStyle(color: ColorsManager.lightGrey),
                         ),
                       ),
-          debugShowCheckedModeBanner: false,
-          initialRoute:
-              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
-          onGenerateRoute: widget.appRouter.generateRoute,
-        ));
+                      debugShowCheckedModeBanner: false,
+                      initialRoute: user == null
+                          ? (Routes.loginScreen)
+                          : (Routes.homeScreen),
+                      onGenerateRoute: widget.appRouter.generateRoute,
+                    ));
               } else if (state is AppThemeDark) {
                 return BlocProvider(
                     create: (_) => NavBarCubit(),
@@ -60,16 +61,20 @@ class _DiveState extends State<Dive> {
                       title: 'Dive App',
                       theme: ThemeData.dark().copyWith(
                         scaffoldBackgroundColor: ColorsManager.black,
+                        cardColor: Colors.grey,
+                        hintColor: Colors.grey,
+                        hoverColor: Colors.grey,
                         textTheme: const TextTheme(
                           bodyLarge: TextStyle(color: Colors.white),
                           bodyMedium: TextStyle(color: ColorsManager.lightGrey),
                         ),
                       ),
-          debugShowCheckedModeBanner: false,
-          initialRoute:
-              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
-          onGenerateRoute: widget.appRouter.generateRoute,
-        ));
+                      debugShowCheckedModeBanner: false,
+                      initialRoute: user == null
+                          ? (Routes.loginScreen)
+                          : (Routes.homeScreen),
+                      onGenerateRoute: widget.appRouter.generateRoute,
+                    ));
               }
               return BlocProvider(
                   create: (_) => NavBarCubit(),
@@ -79,14 +84,14 @@ class _DiveState extends State<Dive> {
                       primaryColor: const Color.fromRGBO(255, 23, 104, 1),
                       scaffoldBackgroundColor: const Color(0xFFFCFCFC),
                     ),
-          debugShowCheckedModeBanner: false,
-          initialRoute:
-              user == null ? (Routes.loginScreen) : (Routes.homeScreen),
-          onGenerateRoute: widget.appRouter.generateRoute,
-        ));
+                    debugShowCheckedModeBanner: false,
+                    initialRoute: user == null
+                        ? (Routes.loginScreen)
+                        : (Routes.homeScreen),
+                    onGenerateRoute: widget.appRouter.generateRoute,
+                  ));
             },
           ),
-        
         ));
   }
 }

@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             "Profile",
-            style: TextStyles.font20BlackSemiBold.copyWith(color: Colors.black),
+            style: TextStyles.font20BlackSemiBold,
           ),
           leading: IconButton(
               onPressed: () {

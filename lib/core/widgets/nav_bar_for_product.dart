@@ -9,12 +9,14 @@ class NavBarProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: ColorsManager.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-              onPressed: () {}, icon: Image.asset('assets/images/love.png')),
+              onPressed: () {},
+              icon: Image.asset(
+                'assets/images/love.png',
+              )),
           AppTextButton(
             buttonText: "Buy now",
             textStyle: TextStyles.font18WhiteRegular,
@@ -24,7 +26,10 @@ class NavBarProductDetails extends StatelessWidget {
             buttonHeight: 50,
           ),
           IconButton(
-              onPressed: () {}, icon: Image.asset('assets/images/basket.png'))
+              onPressed: () {},
+              icon: Image.asset(
+                'assets/images/basket.png',
+              ))
         ],
       ),
     );
