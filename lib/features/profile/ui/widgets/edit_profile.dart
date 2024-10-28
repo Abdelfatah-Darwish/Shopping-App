@@ -19,7 +19,8 @@ class EditProfile extends StatelessWidget {
         ),
         title: Text(
           'Hello, Dalida Morad',
-          style: TextStyles.font15BlackSemiBold.copyWith(color: Colors.black),
+          style: TextStyles.font15BlackSemiBold(context)
+              .copyWith(color: Colors.black),
         ),
         subtitle: Text('Saramorad0@gmail.com',
             style: TextStyles.font12lightGreyRegular),

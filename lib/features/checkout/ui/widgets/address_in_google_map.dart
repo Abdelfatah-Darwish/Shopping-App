@@ -29,7 +29,7 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
         AddressContainer(
           isSelected: selectedContainer == 1,
           title: 'Home',
-          address: '33 Othman Ibn Affan st, Apt8, Adress, Cairo, Egypt',
+          address: '23 Omar Afindy st,  Adress, Menofia, Egypt',
           onTap: () {
             setState(() {
               selectedContainer = 1;
@@ -40,7 +40,7 @@ class _AddressInGoogleMapState extends State<AddressInGoogleMap> {
         AddressContainer(
           isSelected: selectedContainer == 2,
           title: 'Office',
-          address: '77 Mohamed Ali st, Apt 22, Assailed, Cairo, Egypt',
+          address: '12 Rabaa st, New Administrative Capital, Egypt',
           onTap: () {
             setState(() {
               selectedContainer = 2;

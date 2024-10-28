@@ -46,6 +46,22 @@ class TextStyles {
     );
   }
 
+  static TextStyle font15BlackSemiBold(BuildContext context) {
+    return TextStyle(
+      fontSize: 15.sp,
+      fontWeight: FontWeightHelper.bold,
+      color: getTextColor(context),
+    );
+  }
+
+  static TextStyle font18blackSemiBold(BuildContext context) {
+    return TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeightHelper.semiBold,
+      color: getTextColor(context),
+    );
+  }
+
   static TextStyle font18WhiteRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightHelper.regular,
@@ -147,22 +163,13 @@ class TextStyles {
     color: ColorsManager.white,
   );
 
-  static TextStyle font15BlackSemiBold = TextStyle(
-    fontSize: 15.sp,
-    fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
-  );
   //
   static TextStyle font13blackSemiBold = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.black,
   );
-  static TextStyle font18blackSemiBold = TextStyle(
-    fontSize: 18.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: Colors.black,
-  );
+
   static TextStyle font20PinkRegular = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.regular,

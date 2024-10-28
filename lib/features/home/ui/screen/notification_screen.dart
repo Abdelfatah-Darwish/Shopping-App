@@ -28,7 +28,7 @@ class NotificationScreen extends StatelessWidget {
         ),
         title: Text(
           "Notification",
-          style: TextStyles.font18blackSemiBold,
+          style: TextStyles.font18blackSemiBold(context),
         ),
         centerTitle: true,
       ),

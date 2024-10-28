@@ -32,7 +32,7 @@ class WishListScreen extends StatelessWidget {
         ),
         title: Text(
           "WishList",
-          style: TextStyles.font18blackSemiBold,
+          style: TextStyles.font18blackSemiBold(context),
         ),
         centerTitle: true,
       ),

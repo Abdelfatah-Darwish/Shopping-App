@@ -184,10 +184,10 @@ class _CartItemsListState extends State<CartItemsList> {
                 children: [
                   Text(
                     'TOTAL',
-                    style: TextStyles.font15BlackSemiBold,
+                    style: TextStyles.font15BlackSemiBold(context),
                   ),
                   Text(
-                    '${state.totalPrice.toStringAsFixed(2)} L.E',
+                    '  \$ ${state.totalPrice.toStringAsFixed(2)} ',
                     style: TextStyles.font16BlackRegular(context),
                   ),
                 ],

@@ -34,7 +34,7 @@ class _PickCategoriseState extends State<PickCategorise> {
       children: [
         Text(
           label,
-          style: TextStyles.font15BlackSemiBold,
+          style: TextStyles.font15BlackSemiBold(context),
         ),
         verticalSpace(7),
         DropdownButtonFormField<String>(
