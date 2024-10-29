@@ -25,8 +25,7 @@ class CartAppBar extends StatelessWidget {
         horizontalSpace(100),
         Text(
           "Cart",
-          style: TextStyles.font20BlackSemiBold(context)
-              .copyWith(color: const Color(0xFF000000)),
+          style: TextStyles.font20BlackSemiBold(context),
         ),
       ],
     );

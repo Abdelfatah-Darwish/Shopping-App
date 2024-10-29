@@ -29,7 +29,7 @@ class ProductDetailsScreen extends StatelessWidget {
               verticalSpace(5),
               Text(
                 "Recomanded ",
-                style: TextStyles.font18blackSemiBold,
+                style: TextStyles.font18blackSemiBold(context),
               ),
               verticalSpace(3),
               const ProductScreen(),

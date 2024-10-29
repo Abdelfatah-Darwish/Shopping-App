@@ -13,7 +13,7 @@ class PaymentInformation extends StatefulWidget {
 class _PaymentInformationState extends State<PaymentInformation> {
   Version sqlDb = Version();
   double? totalPrice = 0.00;
-  double discount = 50.00; // Discount amount
+  double discount = 50; // Discount amount
 
   Future<double> getTotalPrice() async {
     double total = await sqlDb.getTotalPrice('products');
@@ -30,7 +30,7 @@ class _PaymentInformationState extends State<PaymentInformation> {
 
   @override
   Widget build(BuildContext context) {
-    double discountedTotal = (totalPrice ?? 0.00) - discount;
+    double discountedTotal = (totalPrice ?? 0.00) * (discount / 100);
 
     return Column(
       children: [
@@ -42,7 +42,7 @@ class _PaymentInformationState extends State<PaymentInformation> {
               style: TextStyles.font16lightGreyRegular,
             ),
             Text(
-              '${totalPrice!.toStringAsFixed(2)} L.E',
+              '  \$ ${totalPrice!.toStringAsFixed(2)} ',
               style: TextStyles.font15grayRegular,
             ),
           ],
@@ -55,7 +55,7 @@ class _PaymentInformationState extends State<PaymentInformation> {
               style: TextStyles.font16lightGreyRegular,
             ),
             Text(
-              '- $discount L.E',
+              '  50 \%',
               style: TextStyles.font15pinkRegular,
             ),
           ],
@@ -69,10 +69,10 @@ class _PaymentInformationState extends State<PaymentInformation> {
           children: [
             Text(
               'TOTAL',
-              style: TextStyles.font15BlackSemiBold,
+              style: TextStyles.font15BlackSemiBold(context),
             ),
             Text(
-              '${discountedTotal.toStringAsFixed(2)} L.E',
+              '  \$ ${discountedTotal.toStringAsFixed(2)} ',
               style: TextStyles.font16BlackRegular(context),
             ),
           ],

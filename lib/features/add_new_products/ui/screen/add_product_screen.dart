@@ -54,7 +54,7 @@ class AddProductScreen extends StatelessWidget {
                   children: [
                     Text(
                       'No variants yet',
-                      style: TextStyles.font15BlackSemiBold,
+                      style: TextStyles.font15BlackSemiBold(context),
                     ),
                     TextButton(
                         onPressed: () {

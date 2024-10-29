@@ -55,7 +55,7 @@ class _GridForProductState extends State<GridForProduct> {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Card(
-                  color: ColorsManager.white,
+                  // color: ColorsManager.white,
                   elevation: 3,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
